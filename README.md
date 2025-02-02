@@ -7,6 +7,12 @@
 - Make suggestions
 - Donate money(if wanted)
 
+## Contribuitors
+
+[![Forkers repo roster for @SpargatTeam/blord-ws](https://reporoster.com/forks/SpargatTeam/blord-ws)](https://github.com/SpargatTeam/blord-ws/network/members)
+
+[![Stargazers repo roster for @SpargatTeam/blord-ws](https://reporoster.com/stars/SpargatTeam/blord-ws)](https://github.com/SpargatTeam/blord-ws/stargazers)
+
 ## Open source and how it helps:
 
 - It helps us having support from other developers
