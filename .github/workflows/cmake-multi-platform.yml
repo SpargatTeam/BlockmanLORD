@@ -74,6 +74,23 @@ jobs:
       #  -S ${{ github.workspace }}
 
     # for can build we need download needed depencies
+
+    # made on linux
+    - name: Setup libs
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt install git build-esentials curl
+        mkdir libs
+        cd libs
+        git clone https://github.com/glfw/glfw glfw
+        mkdir lua
+        git clone https://github.com/lua/lua lua
+        mkdir zlib
+        git clone https://github.com/madler/zlib zlib
+        curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
+        unzip -q boost_1_87_0.zip
+        mv boost_1_87_0 boost
+        cd ../
     - name: Build
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       run: cmake --build #${{ steps.strings.outputs.build-output-dir }} --config ${{ matrix.build_type }}
