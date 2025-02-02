@@ -68,7 +68,7 @@ jobs:
     - name: Setup libs
       if: matrix.os == 'ubuntu-latest'
       run: |
-        sudo apt install git build-esentials curl
+        sudo apt install git build-essential curl
         mkdir libs
         cd libs
         git clone https://github.com/glfw/glfw glfw
