@@ -79,7 +79,7 @@ jobs:
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         unzip -q boost_1_87_0.zip
         mv boost_1_87_0 boost
-        l # for debugging
+        ls # for debugging
         cd ../
         sudo apt install upx binutils # for release
 
