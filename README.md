@@ -9,9 +9,9 @@
 
 ## Contribuitors
 
-[![Forkers repo roster for @SpargatTeam/blord-ws](https://reporoster.com/forks/SpargatTeam/blord-ws)](https://github.com/SpargatTeam/blord-ws/network/members)
+[![Forkers repo roster for @SpargatTeam/blord-ws](https://reporoster.com/forks/SpargatTeam/BlockmanLORD)](https://github.com/SpargatTeam/BlockmanLORD/network/members)
 
-[![Stargazers repo roster for @SpargatTeam/blord-ws](https://reporoster.com/stars/SpargatTeam/blord-ws)](https://github.com/SpargatTeam/blord-ws/stargazers)
+[![Stargazers repo roster for @SpargatTeam/blord-ws](https://reporoster.com/stars/SpargatTeam/BlockmanLORD)](https://github.com/SpargatTeam/BlockmanLORD/stargazers)
 
 ## Open source and how it helps:
 
