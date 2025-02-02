@@ -131,7 +131,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE lua)
 ## boost
 set(BOOST_ROOT "${CMAKE_SOURCE_DIR}/libs/boost")
 set(BOOST_BUILD_DIR "${CMAKE_BINARY_DIR}/boost_build")
-include_directories(${BOOST_ROOT})
+include_directories(${BOOST_ROOT}/boost)
 if(NOT EXISTS "${BOOST_BUILD_DIR}/lib")
     add_custom_target(boost_build ALL
         COMMAND ${BOOST_ROOT}/bootstrap.sh --prefix=${BOOST_BUILD_DIR}
@@ -153,6 +153,18 @@ set(GLFW_DIR ${CMAKE_SOURCE_DIR}/libs/glfw)
 add_subdirectory(${GLFW_DIR} ${CMAKE_BINARY_DIR}/glfw_build)
 include_directories(${GLFW_DIR}/include)
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
+### GameServer
+## source
+file(GLOB_RECURSE GAMESERVER_SOURCE
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/server/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/server/*.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/server/*.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/server/*.h
+)
+add_executable(GameServer ${GAMESERVER_SOURCE})
+## boost
+target_link_libraries(GameServer PRIVATE ${BOOST_LIBS})
+include_directories(GameServer PRIVATE ${BOOST_ROOT}/boost)
 ### Security
 # by @Comical
 if(CMAKE_BUILD_TYPE STREQUAL "Release" AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
