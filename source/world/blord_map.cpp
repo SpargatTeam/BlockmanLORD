@@ -19,6 +19,8 @@
 #include "NBT/NBT_Debug.h"
 #include "rapidjson/error/en.h"
 #include "rapidjson/document.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
 namespace BlockmanLORD
 {
 	// if(!strptime(releaseDateValue.GetString(), "%Y-%m-%dT%T%z", &tm))

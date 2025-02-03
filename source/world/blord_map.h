@@ -11,6 +11,8 @@
 #include <map>
 #include <vector>
 #include "rapidjson/document.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
 class MinecraftVersion
 {
 	public:
