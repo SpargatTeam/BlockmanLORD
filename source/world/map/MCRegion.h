@@ -11,7 +11,7 @@ company: Spargat
 #include <unordered_map>
 #include <cstdint>
 
-#include "PairHash.h"
+#include "level/PairHash.h"
 
 class Chunk;
 class NBT_File;

@@ -10,8 +10,8 @@ company: Spargat
 #include <sstream>
 #include <string>
 
-#include "../NBT/NBT_Debug.h"
-#include "../NBT/NBT.h"
+#include "NBT/NBT_Debug.h"
+#include "NBT/NBT.h"
 #include "Map.h"
 #include "MCRegion.h"
 #include "PairHash.h"

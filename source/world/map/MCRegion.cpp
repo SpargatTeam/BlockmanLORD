@@ -8,11 +8,11 @@ company: Spargat
 #include <cstdint>
 #include <algorithm>
 
-#include "../NBT/NBT_File.h"
-#include "../NBT/NBT_Debug.h"
+#include "NBT/NBT_File.h"
+#include "NBT/NBT_Debug.h"
 #include "MCRegion.h"
-#include "storage/Chunk.h"
-#include "../Util.h"
+#include "chunk/Chunk.h"
+#include "Util.h"
 
 
 MCRegion::MCRegion(int x, int z) : x_pos(x), z_pos(z), file_exists(false), old_format(false), chunk_count(0)
