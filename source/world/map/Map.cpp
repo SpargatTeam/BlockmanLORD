@@ -12,9 +12,9 @@ company: Spargat
 
 #include "NBT/NBT_Debug.h"
 #include "NBT/NBT.h"
-#include "Map.h"
-#include "MCRegion.h"
-#include "PairHash.h"
+#include "map/Map.h"
+#include "map/MCRegion.h"
+#include "level/PairHash.h"
 
 Map::Map(const std::string &path) : map_path(path), dimension_id(0)
 {

@@ -10,7 +10,7 @@ company: Spargat
 
 #include "NBT/NBT_File.h"
 #include "NBT/NBT_Debug.h"
-#include "MCRegion.h"
+#include "map/MCRegion.h"
 #include "chunk/Chunk.h"
 #include "Util.h"
 
