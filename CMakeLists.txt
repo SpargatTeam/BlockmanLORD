@@ -104,6 +104,11 @@ set(ACTOR_ROOT "${CMAKE_SOURCE_DIR}/source/actor")
 add_subdirectory(${ACTOR_ROOT} ${CMAKE_BINARY_DIR}/blord_actor_build)
 include_directories(${ACTOR_ROOT})
 target_link_libraries(${PROJECT_NAME} PRIVATE blord_actor)
+## lua
+set(ACTOR_ROOT "${CMAKE_SOURCE_DIR}/source/lua")
+add_subdirectory(${ACTOR_ROOT} ${CMAKE_BINARY_DIR}/blord_lua_build)
+include_directories(${ACTOR_ROOT})
+target_link_libraries(${PROJECT_NAME} PRIVATE blord_lua)
 ## network
 set(NETWORK_ROOT "${CMAKE_SOURCE_DIR}/source/network")
 add_subdirectory(${NETWORK_ROOT} ${CMAKE_BINARY_DIR}/blord_network_build)
@@ -119,21 +124,6 @@ set(ZLIB_ROOT "${CMAKE_SOURCE_DIR}/libs/zlib")
 add_subdirectory(${ZLIB_ROOT} ${CMAKE_BINARY_DIR}/zlib_build)
 include_directories(${ZLIB_ROOT})
 target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
-## lua
-set(LUA_ROOT "${CMAKE_SOURCE_DIR}/libs/lua")
-file(GLOB Lua_sources ${LUA_ROOT}/*.c)
-list(REMOVE_ITEM Lua_sources "${LUA_ROOT}/lua.c" "${LUA_ROOT}/luac.c" "${LUA_ROOT}/onelua.c")
-add_library(lua STATIC ${Lua_sources})
-target_include_directories(lua SYSTEM PUBLIC $<BUILD_INTERFACE:${LUA_ROOT}>)
-install(TARGETS lua
-    EXPORT lua-targets
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
-install(EXPORT lua-targets DESTINATION ${LIB_INSTALL_DIR}/lua_ac/cmake)
-export(EXPORT lua-targets)
-target_link_libraries(${PROJECT_NAME} PRIVATE lua)
 ## boost
 set(BOOST_ROOT "${CMAKE_SOURCE_DIR}/libs/boost")
 set(BOOST_BUILD_DIR "${CMAKE_BINARY_DIR}/boost_build")
