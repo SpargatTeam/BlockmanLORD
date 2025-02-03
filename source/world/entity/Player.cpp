@@ -2,7 +2,7 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "player/Player.h"
+#include "entity/Player.h"
 #include "NBT/NBT_Debug.h"
 #include "NBT/NBT.h"
 #include "NBT/NBT_Tag_List.h"
