@@ -60,7 +60,7 @@ jobs:
 
     - name: Install OpenGL dependencies (Windows)
       if: matrix.os == 'windows-latest'
-      run: choco install freeglut glfw3 -y
+      run: choco install glfw3 -y
 
     # for can build we need download needed depencies
 
@@ -86,6 +86,22 @@ jobs:
         sudo apt-get install pkg-config # needed too
         sudo apt install libxcursor-dev libxinerama-dev libx11-dev libxext-dev libxrandr-dev libxi-dev libxtst-dev libxfixes-dev libxinerama-dev libx11-dev libxcb1-dev libxrandr-dev libxi-dev libxext-dev libxkbcommon-dev # x11
         sudo apt install libboost-all-dev # boost
+
+    # made on windows
+    - name: Setup libs and dependencies
+      if: matrix.os == 'windows-latest'
+      run: |
+        choco install git cmake zip unzip curl upx -y
+        mkdir libs
+        cd libs
+        git clone https://github.com/glfw/glfw glfw
+        git clone https://github.com/lua/lua lua
+        git clone https://github.com/madler/zlib zlib
+        curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
+        powershell -command "Expand-Archive -Path boost_1_87_0.zip -DestinationPath ."
+        ren boost_1_87_0 boost
+        ls # for debugging
+        cd ../
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
