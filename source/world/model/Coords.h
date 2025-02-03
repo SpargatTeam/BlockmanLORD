@@ -5,7 +5,7 @@ company: Spargat
 #ifndef MCMODEL_COORDS_H_GUARD
 #define MCMODEL_COORDS_H_GUARD
 
-#include "../rapidjson/document.h"
+#include "rapidjson/document.h"
 
 namespace Model {
 	

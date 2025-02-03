@@ -2,8 +2,8 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "Rotation.h"
-#include "../Util.h"
+#include "model/Rotation.h"
+#include "Util.h"
 
 namespace Model {
 	

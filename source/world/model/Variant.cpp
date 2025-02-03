@@ -2,13 +2,13 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "Variant.h"
-#include "Element.h"
+#include "modelVariant.h"
+#include "model/Element.h"
 
-#include "../NBT/NBT_Debug.h"
-#include "../Util.h"
+#include "NBT/NBT_Debug.h"
+#include "Util.h"
 
-#include "../blord_map.h"
+#include "blord_map.h"
 
 namespace Model {
 	

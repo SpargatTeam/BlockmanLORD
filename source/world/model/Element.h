@@ -5,13 +5,13 @@ company: Spargat
 #ifndef MCMODEL_ELEMENT_H_GUARD
 #define MCMODEL_ELEMENT_H_GUARD
 
-#include "Coords.h"
-#include "Rotation.h"
-#include "Face.h"
+#include "model/Coords.h"
+#include "model/Rotation.h"
+#include "model/Face.h"
 
-#include "../level/storage/CustomVertex.h"
+#include "chunk/CustomVertex.h"
 
-#include "../rapidjson/document.h"
+#include "rapidjson/document.h"
 
 class ResourceManager;
 

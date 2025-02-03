@@ -5,9 +5,9 @@ company: Spargat
 #ifndef MCMODEL_ROTATION_H_GUARD
 #define MCMODEL_ROTATION_H_GUARD
 
-#include "../rapidjson/document.h"
+#include "rapidjson/document.h"
 
-#include "Coords.h"
+#include "model/Coords.h"
 
 namespace Model {
 	

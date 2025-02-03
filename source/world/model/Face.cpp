@@ -2,11 +2,11 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "Face.h"
-#include "Variant.h"
+#include "model/Face.h"
+#include "model/Variant.h"
 
-#include "../NBT/NBT_Debug.h"
-#include "../Util.h"
+#include "NBT/NBT_Debug.h"
+#include "Util.h"
 
 namespace Model {
 	

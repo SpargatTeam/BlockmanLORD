@@ -8,7 +8,7 @@ company: Spargat
 #include <map>
 #include <vector>
 
-#include "../rapidjson/document.h"
+#include "rapidjson/document.h"
 
 namespace Model {
 

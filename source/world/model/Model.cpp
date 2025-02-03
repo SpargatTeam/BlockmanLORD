@@ -2,16 +2,16 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "Model.h"
-#include "Variant.h"
+#include "model/Model.h"
+#include "model/Variant.h"
 
 #ifdef Bool
 #undef Bool
 #endif
 
-#include "../blord_map.h"
-#include "../rapidjson/document.h"
-#include "../NBT/NBT_Debug.h"
+#include "blord_map.h"
+#include "rapidjson/document.h"
+#include "NBT/NBT_Debug.h"
 
 // assuming [ x, z, y ]
 
