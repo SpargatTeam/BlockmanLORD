@@ -10,10 +10,10 @@
 #include <utility>
 #include <stdio.h>
 
-#include "Block.h"
-#include "../Debug.h"
-#include "BlockMaps.h"
-#include "../NBT/NBT_Debug.h"
+#include "block/Block.h"
+#include "Debug.h"
+#include "block/BlockMaps.h"
+#include "NBT/NBT_Debug.h"
 
 static void printBlockError(uint32_t id, uint32_t data)
 {

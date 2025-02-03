@@ -5,19 +5,19 @@ company: Spargat
 #include <cstdio>
 #include <cassert>
 #include <cmath>
-#include "../MCRegion.h"
-#include "Chunk.h"
-#include "../../Util.h"
+#include "map/MCRegion.h"
+#include "chunk/Chunk.h"
+#include "Util.h"
 
-#include "../../NBT/NBT.h"
-#include "../../NBT/NBT_Debug.h"
-#include "../../NBT/NBT_File.h"
-#include "../../NBT/NBT_Tag_Byte_Array.h"
-#include "../../NBT/NBT_Tag_List.h"
+#include "NBT/NBT.h"
+#include "NBT/NBT_Debug.h"
+#include "NBT/NBT_File.h"
+#include "NBT/NBT_Tag_Byte_Array.h"
+#include "NBT/NBT_Tag_List.h"
 
-#include "ChunkSection.h"
-#include "../../tile/BlockAddress.h"
-#include "../../tile/BlockInfo.h"
+#include "chunk/ChunkSection.h"
+#include "block/BlockAddress.h"
+#include "block/BlockInfo.h"
 
 #include <zlib.h>
 

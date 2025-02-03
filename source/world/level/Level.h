@@ -10,7 +10,7 @@ company: Spargat
 #include <unordered_map>
 #include <cstdint>
 
-#include "../rapidjson/document.h"
+#include "rapidjson/document.h"
 
 namespace rapidjson {
 	class CrtAllocator;

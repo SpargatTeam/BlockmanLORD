@@ -10,13 +10,13 @@ company: Spargat
 #include <cstdint>
 #include "Level.h"
 #include "Map.h"
-#include "../entity/Player.h"
-#include "../NBT/NBT_Debug.h"
-#include "../NBT/NBT.h"
-#include "../NBT/NBT_Tag_Compound.h"
+#include "entity/Player.h"
+#include "NBT/NBT_Debug.h"
+#include "NBT/NBT.h"
+#include "NBT/NBT_Tag_Compound.h"
 
-#include "../ioaccess/IOAccess.h"
-#include "../rapidjson/document.h"
+#include "ioaccess/IOAccess.h"
+#include "rapidjson/document.h"
 
 Level::Level() : level_nbt(0)
 {

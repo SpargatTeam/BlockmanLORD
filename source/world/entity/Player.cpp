@@ -2,11 +2,11 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "Player.h"
-#include "../NBT/NBT_Debug.h"
-#include "../NBT/NBT.h"
-#include "../NBT/NBT_Tag_List.h"
-#include "../NBT/NBT_Tag_Double.h"
+#include "player/Player.h"
+#include "NBT/NBT_Debug.h"
+#include "NBT/NBT.h"
+#include "NBT/NBT_Tag_List.h"
+#include "NBT/NBT_Tag_Double.h"
 #include <cstdint>
 
 Player::~Player()

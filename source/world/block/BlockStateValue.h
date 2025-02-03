@@ -5,7 +5,7 @@ company: Spargat
 #ifndef BLOCK_STATE_VALUE_H_GUARD
 #define BLOCK_STATE_VALUE_H_GUARD
 
-#include "BlockStateValueConvert.h"
+#include "block/BlockStateValueConvert.h"
 #include <cstdint>
 #include <string>
 

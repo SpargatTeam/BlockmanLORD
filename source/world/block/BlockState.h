@@ -9,7 +9,7 @@ company: Spargat
 #include <unordered_map>
 #include <vector>
 
-#include "../level/BlockStateValue.h"
+#include "block/BlockStateValue.h"
 
 class BlockState
 {

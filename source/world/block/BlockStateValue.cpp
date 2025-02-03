@@ -2,6 +2,6 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "BlockStateValue.h"
+#include "block/BlockStateValue.h"
 
 const BlockStateValue BlockStateValue::NullValue;

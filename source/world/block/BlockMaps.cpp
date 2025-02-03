@@ -2,7 +2,7 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "BlockMaps.h"
+#include "block/BlockMaps.h"
 
 const char *BlockNames[BLOCK_COUNT] = {
 	"Air", // 0

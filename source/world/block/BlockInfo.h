@@ -5,8 +5,8 @@ company: Spargat
 #ifndef BLOCK_INFO_H_GUARD
 #define BLOCK_INFO_H_GUARD
 
-#include "BlockAddress.h"
-#include "Block.h"
+#include "block/BlockAddress.h"
+#include "block/Block.h"
 
 struct BlockInfo
 {

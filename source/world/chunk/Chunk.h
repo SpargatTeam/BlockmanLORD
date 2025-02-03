@@ -8,7 +8,7 @@ company: Spargat
 #include <cstdint>
 #include <utility>
 
-#include "../../tile/Block.h"
+#include "block/Block.h"
 
 class BlockInfo;
 class BlockAddress;

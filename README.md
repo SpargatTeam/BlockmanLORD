@@ -25,8 +25,6 @@
 
 ### Download Boost source code and add it on libs and rename the folder on boost
 
-### Download lua 5.4.3 source and add it on libs with name lua
-
 ### Download GLFW source and add it on libs
 
 ### Download ZLIB source and add it on libs

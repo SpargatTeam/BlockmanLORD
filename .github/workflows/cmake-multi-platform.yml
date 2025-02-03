@@ -72,8 +72,6 @@ jobs:
         mkdir libs
         cd libs
         git clone https://github.com/glfw/glfw glfw
-        mkdir lua
-        git clone https://github.com/lua/lua lua
         mkdir zlib
         git clone https://github.com/madler/zlib zlib
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
@@ -95,7 +93,6 @@ jobs:
         mkdir libs
         cd libs
         git clone https://github.com/glfw/glfw glfw
-        git clone https://github.com/lua/lua lua
         git clone https://github.com/madler/zlib zlib
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         powershell -command "Expand-Archive -Path boost_1_87_0.zip -DestinationPath ."
