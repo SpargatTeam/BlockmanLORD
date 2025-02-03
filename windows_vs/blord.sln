@@ -1,0 +1,20 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blord", "blord.vcxproj", "{D7B97757-798D-4B45-9DEB-1F1F4EF1A65D}"
+EndProject
+Global
+  GlobalSection(SolutionConfigurationPlatforms) = preSolution
+    Debug|x64 = Debug|x64
+    Release|x64 = Release|x64
+  EndGlobalSection
+  GlobalSection(ProjectConfigurationPlatforms) = postSolution
+    {D7B97757-798D-4B45-9DEB-1F1F4EF1A65D}.Debug|x64.ActiveCfg = Debug|x64
+    {D7B97757-798D-4B45-9DEB-1F1F4EF1A65D}.Debug|x64.Build.0 = Debug|x64
+    {D7B97757-798D-4B45-9DEB-1F1F4EF1A65D}.Release|x64.ActiveCfg = Release|x64
+    {D7B97757-798D-4B45-9DEB-1F1F4EF1A65D}.Release|x64.Build.0 = Release|x64
+  EndGlobalSection
+  GlobalSection(SolutionProperties) = preSolution
+    HideSolutionNode = FALSE
+  EndGlobalSection
+EndGlobal
