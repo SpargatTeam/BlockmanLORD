@@ -2,7 +2,7 @@
 author: Comical
 company: Spargat
 *********************************************************************/
-#include "modelVariant.h"
+#include "model/Variant.h"
 #include "model/Element.h"
 
 #include "NBT/NBT_Debug.h"
