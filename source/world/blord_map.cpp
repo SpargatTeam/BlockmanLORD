@@ -19,9 +19,7 @@
 #include "NBT/NBT_Debug.h"
 #include "rapidjson/error/en.h"
 #include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
-namespace BlockmanLORD
+namespace // keep this empty
 {
 	// if(!strptime(releaseDateValue.GetString(), "%Y-%m-%dT%T%z", &tm))
 	void parseTime(const char *time_str, tm &time_data)
