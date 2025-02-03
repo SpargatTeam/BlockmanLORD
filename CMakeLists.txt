@@ -16,8 +16,6 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(POSITION_INDEPENDENT_CODE ON)
-## not really needed
-add_executable(${PROJECT_NAME} main.cpp)
 ## compile flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -flto -O3")
 set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -flto")
@@ -88,6 +86,14 @@ elseif(CMAKE_BUILD_PLATFORM STREQUAL "macOS")
     message(STATUS "Building for macOS with Clang.")
 endif()
 ### Sources
+## client
+file(GLOB_RECURSE CLIENT_SOURCE
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.h
+)
+add_executable(${PROJECT_NAME} ${CLIENT_SOURCE})
 ## world
 #set(WORLD_ROOT "${CMAKE_SOURCE_DIR}/source/world")
 #add_subdirectory(${WORLD_ROOT} ${CMAKE_BINARY_DIR}/blord_world_build)
