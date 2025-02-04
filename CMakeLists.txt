@@ -105,10 +105,15 @@ add_subdirectory(${ACTOR_ROOT} ${CMAKE_BINARY_DIR}/blord_actor_build)
 include_directories(${ACTOR_ROOT})
 target_link_libraries(${PROJECT_NAME} PRIVATE blord_actor)
 ## lua
-set(ACTOR_ROOT "${CMAKE_SOURCE_DIR}/source/lua")
-add_subdirectory(${ACTOR_ROOT} ${CMAKE_BINARY_DIR}/blord_lua_build)
-include_directories(${ACTOR_ROOT})
+set(LUA_ROOT "${CMAKE_SOURCE_DIR}/source/lua")
+add_subdirectory(${LUA_ROOT} ${CMAKE_BINARY_DIR}/blord_lua_build)
+include_directories(${LUA_ROOT})
 target_link_libraries(${PROJECT_NAME} PRIVATE blord_lua)
+## gui
+set(GUI_ROOT "${CMAKE_SOURCE_DIR}/source/gui")
+add_subdirectory(${GUI_ROOT} ${CMAKE_BINARY_DIR}/blord_gui_build)
+include_directories(${GUI_ROOT})
+target_link_libraries(${PROJECT_NAME} PRIVATE blord_gui)
 ## network
 set(NETWORK_ROOT "${CMAKE_SOURCE_DIR}/source/network")
 add_subdirectory(${NETWORK_ROOT} ${CMAKE_BINARY_DIR}/blord_network_build)
