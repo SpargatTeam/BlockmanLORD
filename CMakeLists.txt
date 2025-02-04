@@ -138,7 +138,7 @@ if(NOT EXISTS "${BOOST_BUILD_DIR}/lib")
         COMMAND ${BOOST_ROOT}/bootstrap.sh --prefix=${BOOST_BUILD_DIR}
         COMMAND ${BOOST_ROOT}/b2 headers
         COMMAND ${BOOST_ROOT}/b2 --build-dir=${BOOST_BUILD_DIR} --prefix=${BOOST_BUILD_DIR} 
-            --with-regex link=static threading=multi runtime-link=static install
+            --with-regex --with-filesystem --with-system link=static threading=multi runtime-link=static install
         WORKING_DIRECTORY ${BOOST_ROOT}
     )
 else()
