@@ -97,10 +97,8 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt install git build-essential curl
-        mkdir libs
         cd libs
         git clone https://github.com/glfw/glfw glfw
-        mkdir zlib
         git clone https://github.com/madler/zlib zlib
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         unzip -q boost_1_87_0.zip
@@ -118,8 +116,6 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: |
         choco install visualstudio2019-buildtools -y # this will install vs2019 build tools, needed for compille
-        choco install git cmake zip unzip curl upx -y
-        mkdir libs
         cd libs
         git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
