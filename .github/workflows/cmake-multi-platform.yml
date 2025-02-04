@@ -117,6 +117,7 @@ jobs:
     - name: Setup libs and dependencies
       if: matrix.os == 'windows-latest'
       run: |
+        choco install visualstudio2019-buildtools -y # this will install vs2019 build tools, needed for compille
         choco install git cmake zip unzip curl upx -y
         mkdir libs
         cd libs
