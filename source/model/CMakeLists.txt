@@ -6,6 +6,7 @@
 ##############################################################
 cmake_minimum_required(VERSION 3.30)
 project(blord_model)
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 file(GLOB_RECURSE SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/render/*.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/render/*.c
@@ -16,7 +17,6 @@ add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 # depencies
 ## cpm
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 include(get_cpm)
 ## opengl 
 include(get_opengl)
