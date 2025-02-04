@@ -120,10 +120,6 @@ add_subdirectory(${NETWORK_ROOT} ${CMAKE_BINARY_DIR}/blord_network_build)
 include_directories(${NETWORK_ROOT})
 target_link_libraries(${PROJECT_NAME} PRIVATE blord_network)
 ### Library
-## opengl
-find_package(OpenGL REQUIRED)
-set(OpenGL_GL_PREFERENCE GLVND)
-target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL)
 ## zlib
 set(ZLIB_ROOT "${CMAKE_SOURCE_DIR}/libs/zlib")
 add_subdirectory(${ZLIB_ROOT} ${CMAKE_BINARY_DIR}/zlib_build)
