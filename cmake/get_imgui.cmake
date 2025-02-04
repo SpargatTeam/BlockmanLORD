@@ -32,13 +32,13 @@ if(USE_GLES)
         ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
     )
     target_compile_definitions(${PROJECT_NAME} PRIVATE IMGUI_IMPL_OPENGL_ES3)
-#endif()
+endif()
 if(USE_DIRECTX)
     include(get_dx)
     target_sources(${PROJECT_NAME} PRIVATE
         ${IMGUI_DIR}/backends/imgui_impl_dx11.cpp
     )
-#endif()
+endif()
 if(USE_VULKAN)
     include(get_vulkan)
     target_sources(${PROJECT_NAME} PRIVATE

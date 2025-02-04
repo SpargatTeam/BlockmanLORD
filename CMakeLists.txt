@@ -149,10 +149,7 @@ endif()
 file(GLOB BOOST_LIBS "${BOOST_BUILD_DIR}/lib/*.a" "${BOOST_BUILD_DIR}/lib/*.lib")
 target_link_libraries(${PROJECT_NAME} PRIVATE ${BOOST_LIBS})
 ## glfw
-set(GLFW_DIR ${CMAKE_SOURCE_DIR}/libs/glfw)
-add_subdirectory(${GLFW_DIR} ${CMAKE_BINARY_DIR}/glfw_build)
-include_directories(${GLFW_DIR}/include)
-target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
+include(get_glfw)
 ### GameServer
 ## source
 file(GLOB_RECURSE GAMESERVER_SOURCE
