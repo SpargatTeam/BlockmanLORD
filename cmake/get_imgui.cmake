@@ -25,13 +25,13 @@ if(USE_OPENGL)
     target_compile_definitions(${PROJECT_NAME} PRIVATE IMGUI_IMPL_OPENGL_LOADER_GLAD)
     include(get_opengl)
 endif()
-if(USE_GLES)
-    target_sources(${PROJECT_NAME} PRIVATE
-        ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
-    )
-    target_compile_definitions(${PROJECT_NAME} PRIVATE IMGUI_IMPL_OPENGL_ES3)
-    include(get_gles)
-endif()
+#if(USE_GLES)
+#    target_sources(${PROJECT_NAME} PRIVATE
+#        ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
+#    )
+#    target_compile_definitions(${PROJECT_NAME} PRIVATE IMGUI_IMPL_OPENGL_ES3)
+#    include(get_gles)
+#endif()
 if(USE_DIRECTX)
     target_sources(${PROJECT_NAME} PRIVATE
         ${IMGUI_DIR}/backends/imgui_impl_dx11.cpp

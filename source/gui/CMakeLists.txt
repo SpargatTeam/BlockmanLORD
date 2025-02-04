@@ -18,7 +18,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 ### depencies
 ## imgui
 set(USE_OPENGL ON)
-set(USE_GLES ON)
+#set(USE_GLES ON)
 set(USE_DIRECTX ON)
 set(USE_VULKAN ON)
 include(get_imgui)
