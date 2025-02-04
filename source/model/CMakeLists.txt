@@ -20,3 +20,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/../../cmake)
 include(get_cpm)
 ## opengl 
 include(get_opengl)
+## opengl es
+include(get_gles)
+## directx
+include(get_dx)
+## vulkan
+include(get_vulkan)

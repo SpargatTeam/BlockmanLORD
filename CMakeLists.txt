@@ -7,8 +7,6 @@
 ### CMake
 cmake_minimum_required(VERSION 3.30)
 project(blord VERSION 10000 LANGUAGES C CXX)
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
-include(get_cpm) # very needed if you ask me
 ## settings
 set(CMAKE_CXX_STANDARD 23)
 # is this really needed? from @Comical
@@ -94,6 +92,11 @@ file(GLOB_RECURSE CLIENT_SOURCE
     ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.h
 )
 add_executable(${PROJECT_NAME} ${CLIENT_SOURCE})
+## 3d aka model
+set(MODEL_ROOT "${CMAKE_SOURCE_DIR}/source/model")
+add_subdirectory(${MODEL_ROOT} ${CMAKE_BINARY_DIR}/blord_model_build)
+include_directories(${MODEL_ROOT})
+target_link_libraries(${PROJECT_NAME} PRIVATE blord_model)
 ## world
 set(WORLD_ROOT "${CMAKE_SOURCE_DIR}/source/world")
 add_subdirectory(${WORLD_ROOT} ${CMAKE_BINARY_DIR}/blord_world_build)

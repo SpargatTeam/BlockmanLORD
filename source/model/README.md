@@ -3,6 +3,6 @@
 ## What we gonna use?
 
 - Vulkan 1.3 ( for newer hardware )
-- DirectX 11 ( for windows and xbox )
+- DirectX 10/11/12 ( for windows and xbox )
 - OpenGL 3.3 ( for old pc)
 - OpenES 3.2 ( for moba )
