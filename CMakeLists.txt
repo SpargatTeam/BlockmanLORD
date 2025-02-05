@@ -148,8 +148,6 @@ else()
 endif()
 file(GLOB BOOST_LIBS "${BOOST_BUILD_DIR}/lib/*.a" "${BOOST_BUILD_DIR}/lib/*.lib")
 target_link_libraries(${PROJECT_NAME} PRIVATE ${BOOST_LIBS})
-## glfw
-include(get_glfw)
 ### GameServer
 ## source
 file(GLOB_RECURSE GAMESERVER_SOURCE
