@@ -16,7 +16,7 @@
 #include <pwd.h>
 #endif
 #include "ioaccess/IOAccess.h"
-#include "NBT/NBT_Debug.h"
+#include "nbt/NBT_Debug.h"
 #include "rapidjson/error/en.h"
 #include "rapidjson/document.h"
 namespace // keep this empty

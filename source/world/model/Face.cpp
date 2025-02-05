@@ -5,8 +5,8 @@ company: Spargat
 #include "model/Face.h"
 #include "model/Variant.h"
 
-#include "NBT/NBT_Debug.h"
-#include "Util.h"
+#include "nbt/NBT_Debug.h"
+#include "Util.hpp"
 
 namespace Model {
 	

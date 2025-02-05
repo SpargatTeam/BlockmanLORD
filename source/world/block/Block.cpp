@@ -11,9 +11,9 @@
 #include <stdio.h>
 
 #include "block/Block.h"
-#include "Debug.hpp"
+#include "debug.hpp"
 #include "block/BlockMaps.h"
-#include "NBT/NBT_Debug.h"
+#include "nbt/NBT_Debug.h"
 
 static void printBlockError(uint32_t id, uint32_t data)
 {

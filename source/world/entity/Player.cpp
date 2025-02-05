@@ -3,10 +3,10 @@ author: Comical
 company: Spargat
 *********************************************************************/
 #include "entity/Player.h"
-#include "NBT/NBT_Debug.h"
-#include "NBT/NBT.h"
-#include "NBT/NBT_Tag_List.h"
-#include "NBT/NBT_Tag_Double.h"
+#include "nbt/NBT_Debug.h"
+#include "nbt/NBT.h"
+#include "nbt/NBT_Tag_List.h"
+#include "nbt/NBT_Tag_Double.h"
 #include <cstdint>
 
 Player::~Player()

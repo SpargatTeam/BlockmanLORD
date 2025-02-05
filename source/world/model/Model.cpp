@@ -11,7 +11,7 @@ company: Spargat
 
 #include "blord_map.h"
 #include "rapidjson/document.h"
-#include "NBT/NBT_Debug.h"
+#include "nbt/NBT_Debug.h"
 
 // assuming [ x, z, y ]
 

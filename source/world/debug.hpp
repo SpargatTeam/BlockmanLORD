@@ -6,7 +6,7 @@
 *********************************************************************/
 #ifndef Debug_H_GUARD
 #define Debug_H_GUARD
-#include "NBT/NBT_Debug.h"
+#include "nbt/NBT_Debug.h"
 #ifdef DEBUG
 #define BLORD_DEBUG 1
 #else

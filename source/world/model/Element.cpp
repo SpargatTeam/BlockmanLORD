@@ -4,7 +4,7 @@ company: Spargat
 *********************************************************************/
 #include "model/Element.h"
 #include "model/Variant.h"
-#include "NBT/NBT_Debug.h"
+#include "nbt/NBT_Debug.h"
 
 namespace Model {
 

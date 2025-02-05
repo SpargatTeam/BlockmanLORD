@@ -11,8 +11,8 @@ company: Spargat
 #include <vector>
 #include <string>
 
-#include "Util.h"
-#include "NBT/NBT_Debug.h"
+#include "Util.hpp"
+#include "nbt/NBT_Debug.h"
 
 #include "rapidjson/document.h"
 

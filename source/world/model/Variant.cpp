@@ -5,8 +5,8 @@ company: Spargat
 #include "model/Variant.h"
 #include "model/Element.h"
 
-#include "NBT/NBT_Debug.h"
-#include "Util.h"
+#include "nbt/NBT_Debug.h"
+#include "Util.hpp"
 
 #include "blord_map.h"
 

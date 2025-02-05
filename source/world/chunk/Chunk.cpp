@@ -7,13 +7,13 @@ company: Spargat
 #include <cmath>
 #include "map/MCRegion.h"
 #include "chunk/Chunk.h"
-#include "Util.h"
+#include "Util.hpp"
 
-#include "NBT/NBT.h"
-#include "NBT/NBT_Debug.h"
-#include "NBT/NBT_File.h"
-#include "NBT/NBT_Tag_Byte_Array.h"
-#include "NBT/NBT_Tag_List.h"
+#include "nbt/NBT.h"
+#include "nbt/NBT_Debug.h"
+#include "nbt/NBT_File.h"
+#include "nbt/NBT_Tag_Byte_Array.h"
+#include "nbt/NBT_Tag_List.h"
 
 #include "chunk/ChunkSection.h"
 #include "block/BlockAddress.h"

@@ -11,9 +11,9 @@ company: Spargat
 #include "Level.h"
 #include "Map.h"
 #include "entity/Player.h"
-#include "NBT/NBT_Debug.h"
-#include "NBT/NBT.h"
-#include "NBT/NBT_Tag_Compound.h"
+#include "nbt/NBT_Debug.h"
+#include "nbt/NBT.h"
+#include "nbt/NBT_Tag_Compound.h"
 
 #include "ioaccess/IOAccess.h"
 #include "rapidjson/document.h"
