@@ -1,6 +1,7 @@
 # BlockmanLORD, a big project and a big remake
 
-## Copyright [SpargatTeam](https://github.com/SpargatTeam) 2025. All rights reserved of the project [BlockmanLORD](https://github.com/SpargatTeam/BlockmanLORD)
+## Copyright © 2025 [SpargatTeam](https://github.com/SpargatTeam). All rights reserved of the project [BlockmanLORD](https://github.com/SpargatTeam/BlockmanLORD)
+
 ## Help us
 
 - Make pull requets to add fixes or new functions
