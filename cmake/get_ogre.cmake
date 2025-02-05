@@ -6,6 +6,11 @@
 ##############################################################
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 set(OGRE_DIR ${CMAKE_SOURCE_DIR}/libs/ogre)
+set(OGRE_BUILD_DEPENDENCIES ON)
+set(OGRE_BUILD_SAMPLES OFF)
+set(OGRE_BUILD_RENDERSYSTEM_CG OFF CACHE BOOL "" FORCE)
+set(OGRE_BUILD_TESTS OFF)
+set(OGRE_STATIC ON CACHE BOOL "" FORCE)
 add_subdirectory(${OGRE_DIR} ${CMAKE_BINARY_DIR}/ogre_build)
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${OGRE_DIR}/OgreMain/include
