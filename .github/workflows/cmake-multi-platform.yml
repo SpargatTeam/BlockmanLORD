@@ -62,7 +62,7 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: choco install glfw3 -y
 
-    # vulakn 1.3
+    # vulkan 1.3
     - name: Install Vulkan SDK
       uses: jakoch/install-vulkan-sdk-action@v1.1.0
       with:
