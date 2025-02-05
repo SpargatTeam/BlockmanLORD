@@ -32,3 +32,5 @@ include(get_vulkan)
 #set(USE_DIRECTX ON)
 set(USE_VULKAN ON)
 include(get_ogre)
+## assimp
+include(get_assimp)
