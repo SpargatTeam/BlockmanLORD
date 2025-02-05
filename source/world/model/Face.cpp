@@ -6,7 +6,7 @@ company: Spargat
 #include "model/Variant.h"
 
 #include "nbt/NBT_Debug.h"
-#include "Util.hpp"
+#include "util.hpp"
 
 namespace Model {
 	

@@ -12,7 +12,7 @@ company: Spargat
 #include "nbt/NBT_Debug.h"
 #include "map/MCRegion.h"
 #include "chunk/Chunk.h"
-#include "Util.hpp"
+#include "util.hpp"
 
 
 MCRegion::MCRegion(int x, int z) : x_pos(x), z_pos(z), file_exists(false), old_format(false), chunk_count(0)

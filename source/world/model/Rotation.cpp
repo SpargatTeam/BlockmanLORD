@@ -3,7 +3,7 @@ author: Comical
 company: Spargat
 *********************************************************************/
 #include "model/Rotation.h"
-#include "Util.hpp"
+#include "util.hpp"
 
 namespace Model {
 	

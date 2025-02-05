@@ -7,7 +7,7 @@ company: Spargat
 #include <cmath>
 #include "map/MCRegion.h"
 #include "chunk/Chunk.h"
-#include "Util.hpp"
+#include "util.hpp"
 
 #include "nbt/NBT.h"
 #include "nbt/NBT_Debug.h"
