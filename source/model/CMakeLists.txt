@@ -26,3 +26,9 @@ include(get_opengl)
 #include(get_dx)
 ## vulkan
 include(get_vulkan)
+## ogre
+#set(USE_OPENGL ON)
+#set(USE_GLES ON)
+#set(USE_DIRECTX ON)
+set(USE_VULKAN ON)
+include(get_ogre)

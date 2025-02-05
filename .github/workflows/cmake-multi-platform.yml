@@ -91,6 +91,7 @@ jobs:
         cd libs
         git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
+        git clone https://github.com/OGRECave/ogre-next ogre
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         unzip -q boost_1_87_0.zip
         mv boost_1_87_0 boost
@@ -110,6 +111,7 @@ jobs:
         cd libs
         git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
+        git clone https://github.com/OGRECave/ogre-next ogre
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         powershell -command "Expand-Archive -Path boost_1_87_0.zip -DestinationPath ."
         ren boost_1_87_0 boost
