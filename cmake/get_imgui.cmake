@@ -19,7 +19,7 @@ target_sources(${PROJECT_NAME} PRIVATE
 )
 if(USE_OPENGL)
     include(get_glfw)
-    #include(get_opengl)
+    include(get_opengl)
     target_sources(${PROJECT_NAME} PRIVATE
         ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
         ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
