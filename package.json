@@ -6,8 +6,8 @@
     "license": "GNU",
     "repository": "https://github.com/SpargatTeam/BlockmanLORD",
     "scripts": {
-      "start": "vuepress dev markdown",
-      "build": "vuepress build markdown"
+      "start": "vuepress dev web",
+      "build": "vuepress build web"
     },
     "devDependencies": {
       "@vuepress/plugin-back-to-top": "^1.8.2",
