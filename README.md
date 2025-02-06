@@ -2,7 +2,11 @@
 
 ## Copyright © 2025 [SpargatTeam](https://github.com/SpargatTeam). All rights reserved of the project [BlockmanLORD](https://github.com/SpargatTeam/BlockmanLORD)
 
-[![Blockman](https://raw.githubusercontent.com/SpargatTeam/BlockmanLORD/main/res/mipmap-xxxhdpi/app_launcher.png)](https://blockmanlauncher.vercel.app)
+<p align="center">
+  <a href="https://blockmanlauncher.vercel.app">
+    <img src="https://raw.githubusercontent.com/SpargatTeam/BlockmanLORD/main/res/mipmap-xxxhdpi/app_launcher.png" alt="Blockman"/>
+  </a>
+</p>
 
 ## Help us
 
