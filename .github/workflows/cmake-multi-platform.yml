@@ -87,7 +87,6 @@ jobs:
     - name: Setup libs and depencies
       if: matrix.os == 'ubuntu-latest'
       run: |
-        sudo apt install git build-essential curl
         cd libs
         git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
@@ -99,8 +98,9 @@ jobs:
         ls # for debugging
         cd ../
         sudo apt update && sudo apt install -y \
-        # dev-build
-        cmake ninja-build pkg-config \
+        # dev
+        #cmake ninja-build pkg-config \
+        git build-essential curl \
         upx binutils \
         # x11
         libxcursor-dev libxinerama-dev libx11-dev libxext-dev \
