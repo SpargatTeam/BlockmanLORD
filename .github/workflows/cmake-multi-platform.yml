@@ -97,25 +97,26 @@ jobs:
         mv boost_1_87_0 boost
         ls # for debugging
         cd ../
-        sudo apt update && sudo apt install -y \
-        # dev
-        #cmake ninja-build pkg-config \
-        build-essential curl git \
-        upx binutils \
-        # x11
-        libxcursor-dev libxinerama-dev libx11-dev libxext-dev \
-        libxrandr-dev libxi-dev libxtst-dev libxfixes-dev libxcb1-dev \
-        libxkbcommon-dev libxaw7-dev \
-        # wayland
-        wayland-protocols libwayland-dev wayland-scanner++ \
-        # boost
-        libboost-all-dev \
-        # text, font etc
-        libpng-dev libjpeg-dev libtiff-dev libopenexr-dev libfreeimage-dev libfreetype6-dev \
-        # xml
-        libpugixml-dev libjsoncpp-dev \
-        # for it have psyhics
-        libbullet-dev
+        sudo apt install -y \
+            # dev
+            #cmake ninja-build pkg-config \
+            build-essential curl git \
+            upx binutils \
+            # x11
+            libxcursor-dev libxinerama-dev libx11-dev libxext-dev \
+            libxrandr-dev libxi-dev libxtst-dev libxfixes-dev libxcb1-dev \
+            libxkbcommon-dev libxaw7-dev \
+            # wayland
+            wayland-protocols libwayland-dev wayland-scanner++ \
+            # boost
+            libboost-all-dev \
+            # text, font etc
+            libpng-dev libjpeg-dev libtiff-dev libopenexr-dev libfreeimage-dev libfreetype6-dev \
+            # xml
+            libpugixml-dev libjsoncpp-dev \
+            # for it have psyhics
+            libbullet-dev
+        sudo apt update && sudo apt upgrade -y
 
     # made on windows
     - name: Setup libs and dependencies
