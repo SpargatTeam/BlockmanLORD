@@ -1,0 +1,14 @@
+title: BlockmanLORD
+subtitle: BLORD
+description: BlockmanLORD, Spargat's LORD Remake Engine
+author: SpargatTeam
+language: en
+source_dir: web
+public_dir: dist
+templateFormats: ["ejs", "html"]
+plugins:
+  - hexo-plugin-ejs
+markdown:
+  render:
+    html: true
+    engine: "html"
