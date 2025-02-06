@@ -6,8 +6,8 @@ module.exports = function (eleventyConfig) {
             output: "dist"
         },
         templateFormats: ["ejs", "html"],
-        htmlTemplateEngine: "ejs",
-        markdownTemplateEngine: "ejs",
+        htmlTemplateEngine: "html",
+        markdownTemplateEngine: "html",        
         passthroughFileCopy: true
     };
 };
