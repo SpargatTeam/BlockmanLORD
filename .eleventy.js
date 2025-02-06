@@ -5,7 +5,9 @@ module.exports = function (eleventyConfig) {
             includes: "web/components",
             output: "dist"
         },
-        templateFormats: ["ejs"],
+        templateFormats: ["ejs", "html"],
+        htmlTemplateEngine: "ejs",
+        markdownTemplateEngine: "ejs",
         passthroughFileCopy: true
     };
 };
