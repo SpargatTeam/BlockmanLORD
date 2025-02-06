@@ -1,0 +1,17 @@
+{
+    "name": "blockmanlord",
+    "version": "1.0.0",
+    "author": "SpargatTeam",
+    "license": "GNU",
+    "description": "BlockmanLORD static website",
+    "main": ".eleventy.js",
+    "scripts": {
+        "start": "npx @11ty/eleventy --serve",
+        "build": "npx @11ty/eleventy"
+    },
+    "dependencies": {
+        "@11ty/eleventy": "latest",
+        "ejs": "latest"
+    },
+    "devDependencies": {}
+}
