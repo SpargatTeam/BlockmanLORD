@@ -4,9 +4,9 @@ name: CMake on multiple platforms
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "develop" ]
 
 jobs:
   build:
@@ -27,9 +27,9 @@ jobs:
         build_type: [Release]
         c_compiler: [gcc, clang, cl, mingw]
         include:
-          - os: windows-latest
-            c_compiler: cl
-            cpp_compiler: cl
+          #- os: windows-latest # we are temp remove MSVC compille and change to MinGW
+          #  c_compiler: cl
+          #  cpp_compiler: cl
           - os: windows-latest
             c_compiler: mingw
             cpp_compiler: g++
