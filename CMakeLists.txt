@@ -15,10 +15,6 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(POSITION_INDEPENDENT_CODE ON)
-## icon
-set(ICON_RESOURCE "res/mipmap-xxxhdpi/app_launcher.rc")
-target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
-target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
 ## compile flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -flto -O3")
 set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -flto")
@@ -49,6 +45,10 @@ set(MODEL_ROOT "${CMAKE_SOURCE_DIR}/source/model")
 add_subdirectory(${MODEL_ROOT} ${CMAKE_BINARY_DIR}/blord_model_build)
 include_directories(${MODEL_ROOT})
 target_link_libraries(${PROJECT_NAME} PRIVATE blord_model)
+## icon
+set(ICON_RESOURCE "res/mipmap-xxxhdpi/app_launcher.rc")
+target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
+target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
 ## world
 set(WORLD_ROOT "${CMAKE_SOURCE_DIR}/source/world")
 add_subdirectory(${WORLD_ROOT} ${CMAKE_BINARY_DIR}/blord_world_build)
