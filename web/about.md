@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <h1>BlockmanLORD, a big project and a big remake</h1>
 
 <h2>Copyright © 2025 <a href="https://guthub.com/SpargatTeam">SpargatTeam</a>. All rights reserved of the project <a href="https://github.com/SpargatTeam/BlockmanLORD">BlockmanLORD</a></h2>
