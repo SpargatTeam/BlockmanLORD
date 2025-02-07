@@ -9,9 +9,33 @@ module.exports = {
     "BlockmanLORD, Spargat's LORD Remake",
   base: "/",
   dest: "./dist",
+  theme: "vuepress-theme-succinct",
+  globalUIComponents: ["ThemeManager"],
   themeConfig: {
-    navbar: NavBar,
+    displayAllHeaders: false,
+    lastUpdated: true,
+    repo: "https://github.com/SpargatTeam/BlockmanLORD/",
+    docsDir: "web",
+    docsBranch: "develop",
+    editLinks: true,
+    editLinkText: "Help BlockmanLORD project!",
     sidebar: SideBar,
-    sidebarDepth: 2,
+    nav: NavBar,
   },
+  plugins: [
+    ["vuepress-plugin-code-copy", true],
+    ["flexsearch"],
+    ["code-switcher"],
+    "@vuepress/plugin-back-to-top",
+    "vuepress-plugin-smooth-scroll",
+    [
+      "vuepress-plugin-medium-zoom",
+      {
+        selector: "img",
+        options: {
+          background: "var(--bodyBgColor)",
+        },
+      },
+    ],
+  ],
 };
