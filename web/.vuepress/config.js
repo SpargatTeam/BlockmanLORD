@@ -33,7 +33,8 @@ module.exports = {
       {
         selector: "img",
         options: {
-          background: "var(--bodyBgColor)",
+          //background: "var(--bodyBgColor)",
+          background: "#000",
         },
       },
     ],
