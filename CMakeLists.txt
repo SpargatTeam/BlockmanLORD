@@ -82,18 +82,6 @@ include_directories(${ZLIB_ROOT})
 target_link_libraries(${PROJECT_NAME} PRIVATE zlib)
 ## boost
 include(get_boost)
-### GameServer
-## source
-file(GLOB_RECURSE GAMESERVER_SOURCE
-    ${CMAKE_CURRENT_SOURCE_DIR}/source/server/*.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/source/server/*.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/source/server/*.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/source/server/*.h
-)
-add_executable(GameServer ${GAMESERVER_SOURCE})
-## boost
-target_link_libraries(GameServer PRIVATE ${BOOST_LIBS})
-include_directories(GameServer PRIVATE ${BOOST_ROOT}/boost)
 ### Security
 # by @Comical
 if(CMAKE_BUILD_TYPE STREQUAL "Release" AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
