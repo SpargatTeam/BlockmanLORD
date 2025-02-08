@@ -119,6 +119,7 @@ jobs:
         choco install 7zip -y
         choco install mingw -y
         choco install llvm -y
+        choco install ninja -y
         7z x boost_1_87_0.zip -aoa -o"./boost"
         cd ../
 
