@@ -55,6 +55,12 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: choco install glfw3 -y
 
+    - name: Install OpenGL dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install glfw
+        brew install --cask xquartz
+
     # vulkan 1.3
     - name: Install Vulkan SDK
       uses: jakoch/install-vulkan-sdk-action@v1.1.0
@@ -77,7 +83,7 @@ jobs:
       run: sudo apt install -y libgles2-mesa-dev
 
     # made on linux
-    - name: Setup libs and depencies
+    - name: Setup libs and depencies (Linux)
       if: matrix.os == 'ubuntu-latest'
       run: |
         cd libs
@@ -90,7 +96,7 @@ jobs:
         mv boost_1_87_0 boost
         cd ../
         # dev
-        #sudo apt install -y cmake ninja-build pkg-config \
+        #sudo apt install -y cmake ninja-build pkg-config 
         sudo apt install -y build-essential curl git upx binutils 
         # x11
         sudo apt install -y libxcursor-dev libxinerama-dev libx11-dev libxext-dev libxrandr-dev libxi-dev libxtst-dev libxfixes-dev libxcb1-dev libxkbcommon-dev libxaw7-dev 
@@ -104,7 +110,7 @@ jobs:
         sudo apt install -y libpugixml-dev libjsoncpp-dev 
 
     # made on windows
-    - name: Setup libs and dependencies
+    - name: Setup libs and dependencies (Windows)
       if: matrix.os == 'windows-latest'
       run: |
         cd libs
@@ -116,6 +122,32 @@ jobs:
         choco install 7zip -y
         7z x boost_1_87_0.zip -aoa -o"./boost"
         cd ../
+
+      # made on macos
+    - name: Setup libs and dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        cd libs
+        git clone https://github.com/glfw/glfw glfw
+        git clone https://github.com/madler/zlib zlib
+        git clone https://github.com/assimp/assimp assimp
+        git clone https://github.com/bulletphysics/bullet3 bullet
+        curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
+        unzip -q boost_1_87_0.zip
+        mv boost_1_87_0 boost
+        cd ../
+        # dev
+        brew install cmake curl git upx binutils
+        # x11
+        brew install libxcursor libxinerama libx11 libxext libxrandr libxi libxtst libxfixes libxcb libxkbcommon libxaw
+        # wayland
+        brew install wayland-protocols wayland
+        # boost
+        brew install boost
+        # text, font etc
+        brew install libpng libjpeg libtiff openexr freeimage freetype
+        # xml
+        brew install pugixml jsoncpp
 
     - name: Configure CMake
       run: >
