@@ -115,7 +115,7 @@ jobs:
     - name: Setup libs and dependencies
       if: matrix.os == 'windows-latest'
       run: |
-        Invoke-WebRequest -Uri https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20210625.exe -OutFile msys2-installer.exe
+        Invoke-WebRequest -Uri https://github.com/msys2/msys2-installer/releases/download/2021-09-01/msys2-x86_64-20210901.exe -OutFile msys2-installer.exe
         Start-Process msys2-installer.exe -ArgumentList '/S' -Wait
         rm msys2-installer.exe
         choco source add -n chocolatey -s 'https://chocolatey.org/api/v2/'
