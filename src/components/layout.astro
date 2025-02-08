@@ -41,6 +41,26 @@ import cursor_hand from '../assets/cursor-hand.png';
 		background: var(--accent);
 		color: white;
 	}
+	body {
+  		background-color: #171524; 
+ 		background-image: 
+    		linear-gradient(45deg, #3245FF, #BC52EE), 
+    		linear-gradient(45deg, #D83333, #F041FF); 
+  		background-blend-mode: overlay; 
+  		height: 100vh;
+  		margin: 0;
+  		position: relative;
+	}
+	body::before {
+  		content: "";
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		right: 0;
+  		bottom: 0;
+  		background: rgba(0, 0, 0, 0.15); 
+  		pointer-events: none;
+	}
 	html {
 		color: white;
 		font-family: system-ui, sans-serif;
