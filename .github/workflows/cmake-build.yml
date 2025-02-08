@@ -92,6 +92,7 @@ jobs:
         git clone https://github.com/madler/zlib zlib
         git clone https://github.com/OGRECave/ogre-next ogre
         git clone https://github.com/assimp/assimp assimp
+        git clone https://github.com/bulletphysics/bullet3 bullet
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         unzip -q boost_1_87_0.zip
         mv boost_1_87_0 boost
@@ -109,9 +110,6 @@ jobs:
         sudo apt install -y libpng-dev libjpeg-dev libtiff-dev libopenexr-dev libfreeimage-dev libfreetype6-dev 
         # xml
         sudo apt install -y libpugixml-dev libjsoncpp-dev 
-        # for it have psyhics
-        sudo apt install -y libbullet-dev
-        sudo apt update && sudo apt upgrade -y
 
     # made on windows
     - name: Setup libs and dependencies
@@ -123,6 +121,7 @@ jobs:
         git clone https://github.com/madler/zlib zlib
         git clone https://github.com/OGRECave/ogre-next ogre
         git clone https://github.com/assimp/assimp assimp
+        git clone https://github.com/bulletphysics/bullet3 bullet
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         choco install 7zip -y
         7z x boost_1_87_0.zip -aoa -o"./boost"
