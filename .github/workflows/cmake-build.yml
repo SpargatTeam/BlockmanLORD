@@ -96,7 +96,6 @@ jobs:
         mv boost_1_87_0 boost
         cd ../
         # dev
-        #sudo apt install -y cmake ninja-build pkg-config 
         sudo apt install -y build-essential curl git upx binutils 
         # x11
         sudo apt install -y libxcursor-dev libxinerama-dev libx11-dev libxext-dev libxrandr-dev libxi-dev libxtst-dev libxfixes-dev libxcb1-dev libxkbcommon-dev libxaw7-dev 
@@ -123,7 +122,7 @@ jobs:
         7z x boost_1_87_0.zip -aoa -o"./boost"
         cd ../
 
-      # made on macos
+    # made on macos
     - name: Setup libs and dependencies (macOS)
       if: matrix.os == 'macos-latest'
       run: |
@@ -140,8 +139,6 @@ jobs:
         brew install cmake curl git upx binutils
         # x11
         brew install libxcursor libxinerama libx11 libxext libxrandr libxi libxtst libxfixes libxcb libxkbcommon libxaw
-        # wayland
-        brew install wayland-protocols wayland
         # boost
         brew install boost
         # text, font etc
