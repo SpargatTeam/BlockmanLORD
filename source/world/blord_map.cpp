@@ -9,7 +9,11 @@
 //#define _XOPEN_SOURCE
 #include <time.h>
 #include <algorithm>
-#include <unistd.h>
+#ifdef _WIN32 && _WIN64
+    #include <windows.h>
+#else
+    #include <unistd.h>
+#endif
 #include <sys/types.h>
 // for linux only
 #if  defined(__unix__)
