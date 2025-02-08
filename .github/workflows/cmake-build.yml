@@ -124,9 +124,8 @@ jobs:
         git clone https://github.com/OGRECave/ogre-next ogre
         git clone https://github.com/assimp/assimp assimp
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
-        powershell -command "Expand-Archive -Path boost_1_87_0.zip -DestinationPath ."
-        ren boost_1_87_0 boost
-        ls # for debugging
+        choco install 7zip -y
+        7z x boost_1_87_0.zip -aoa -o"./boost"
         cd ../
 
     - name: Configure CMake
