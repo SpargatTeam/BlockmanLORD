@@ -126,6 +126,7 @@ jobs:
         choco install 7zip -y
         7z x boost_1_87_0.zip -aoa -o"./boost"
         cd ../
+        choco install zlib
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
