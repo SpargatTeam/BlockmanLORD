@@ -3,7 +3,12 @@ author: Comical
 company: Spargat
 *********************************************************************/
 #include <sys/types.h>
-#include <dirent.h>
+#ifdef _WIN32 && _WIN64
+    #include <windows.h>
+#else
+    #include <dirent.h>
+#endif
+
 #include <unistd.h>
 #include <sys/stat.h>
 #include <cstring>

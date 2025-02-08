@@ -16,16 +16,12 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         build_type: [Debug]
-        c_compiler: [gcc, clang, mingw]
+        c_compiler: [gcc, clang]
         include:
-          - os: windows-latest
-            c_compiler: mingw
-            cpp_compiler: g++
-            makefile: MinGW Makefiles
           - os: windows-latest
             c_compiler: clang
             cpp_compiler: clang++
-            makefile: Ninja
+            makefile: MinGW Makefiles
           - os: ubuntu-latest
             c_compiler: gcc
             cpp_compiler: g++
@@ -117,9 +113,7 @@ jobs:
         git clone https://github.com/bulletphysics/bullet3 bullet
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         choco install 7zip -y
-        choco install mingw -y
         choco install llvm -y
-        choco install ninja -y
         7z x boost_1_87_0.zip -aoa -o"./boost"
         cd ../
 
