@@ -22,6 +22,10 @@ jobs:
             c_compiler: mingw
             cpp_compiler: g++
             makefile: MinGW Makefiles
+          - os: windows-latest
+            c_compiler: clang
+            cpp_compiler: clang++
+            makefile: Ninja
           - os: ubuntu-latest
             c_compiler: gcc
             cpp_compiler: g++
@@ -30,10 +34,6 @@ jobs:
             c_compiler: clang
             cpp_compiler: clang++
             makefile: Unix Makefiles
-          - os: windows-latest
-            c_compiler: clang
-            cpp_compiler: clang++
-            makefile: Ninja
         exclude:
           - os: ubuntu-latest
             c_compiler: mingw
