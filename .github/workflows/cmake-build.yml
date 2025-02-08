@@ -93,7 +93,6 @@ jobs:
         cd libs
         git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
-        git clone https://github.com/OGRECave/ogre-next ogre
         git clone https://github.com/assimp/assimp assimp
         git clone https://github.com/bulletphysics/bullet3 bullet
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
@@ -118,12 +117,9 @@ jobs:
     - name: Setup libs and dependencies
       if: matrix.os == 'windows-latest'
       run: |
-        choco source add -n chocolatey -s 'https://chocolatey.org/api/v2/'
-        choco install visualstudio2019-buildtools -y # this will install vs2019 build tools, needed for compille
         cd libs
         git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
-        git clone https://github.com/OGRECave/ogre-next ogre
         git clone https://github.com/assimp/assimp assimp
         git clone https://github.com/bulletphysics/bullet3 bullet
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
@@ -136,7 +132,7 @@ jobs:
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       run: >
-        cmake -G=${{ matrix.makefile }} -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        cmake -G "${{ matrix.makefile }}" -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
 
     - name: Build
       # Build your program with the given configuration. Note that --config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
