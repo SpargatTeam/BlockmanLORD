@@ -1,4 +1,4 @@
-name: CMake on multiple platforms
+name: CMake Build
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         build_type: [Debug]
         c_compiler: [gcc, clang]
         include:
@@ -28,10 +28,14 @@ jobs:
             c_compiler: clang
             cpp_compiler: clang++
             makefile: Unix Makefiles
+          - os: macos-latest
+            c_compiler: clang
+            cpp_compiler: clang++
+            makefile: Unix Makefiles
         exclude:
-          - os: ubuntu-latest
-            c_compiler: mingw
           - os: windows-latest
+            c_compiler: gcc
+          - os: macos-latest
             c_compiler: gcc
 
     steps:
