@@ -41,39 +41,23 @@ file(GLOB_RECURSE CLIENT_SOURCE
 )
 add_executable(${PROJECT_NAME} ${CLIENT_SOURCE})
 ## 3d aka model
-set(MODEL_ROOT "${CMAKE_SOURCE_DIR}/source/model")
-add_subdirectory(${MODEL_ROOT} ${CMAKE_BINARY_DIR}/blord_model_build)
-include_directories(${MODEL_ROOT})
-target_link_libraries(${PROJECT_NAME} PRIVATE blord_model)
+include(source/get_model)
 ## icon
 set(ICON_RESOURCE "res/mipmap-xxxhdpi/app_launcher.rc")
 target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
 target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
 ## world
-#set(WORLD_ROOT "${CMAKE_SOURCE_DIR}/source/world")
-#add_subdirectory(${WORLD_ROOT} ${CMAKE_BINARY_DIR}/blord_world_build)
-#include_directories(${WORLD_ROOT})
-#target_link_libraries(${PROJECT_NAME} PRIVATE blord_world)
+include(source/get_world)
 ## actor
-set(ACTOR_ROOT "${CMAKE_SOURCE_DIR}/source/actor")
-add_subdirectory(${ACTOR_ROOT} ${CMAKE_BINARY_DIR}/blord_actor_build)
-include_directories(${ACTOR_ROOT})
-target_link_libraries(${PROJECT_NAME} PRIVATE blord_actor)
+include(source/get_actor)
 ## lua
-set(LUA_ROOT "${CMAKE_SOURCE_DIR}/source/lua")
-add_subdirectory(${LUA_ROOT} ${CMAKE_BINARY_DIR}/blord_lua_build)
-include_directories(${LUA_ROOT})
-target_link_libraries(${PROJECT_NAME} PRIVATE blord_lua)
+include(source/get_lua)
 ## gui
-set(GUI_ROOT "${CMAKE_SOURCE_DIR}/source/gui")
-add_subdirectory(${GUI_ROOT} ${CMAKE_BINARY_DIR}/blord_gui_build)
-include_directories(${GUI_ROOT})
-target_link_libraries(${PROJECT_NAME} PRIVATE blord_gui)
+include(source/get_gui)
 ## network
-set(NETWORK_ROOT "${CMAKE_SOURCE_DIR}/source/network")
-add_subdirectory(${NETWORK_ROOT} ${CMAKE_BINARY_DIR}/blord_network_build)
-include_directories(${NETWORK_ROOT})
-target_link_libraries(${PROJECT_NAME} PRIVATE blord_network)
+include(source/get_network)
+## common 
+include(source/get_common)
 ### Security
 # by @Comical
 if(CMAKE_BUILD_TYPE STREQUAL "Release" AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
