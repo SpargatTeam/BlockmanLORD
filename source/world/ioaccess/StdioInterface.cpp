@@ -2,7 +2,12 @@
 #include "StdioInterface.h"
 #include "StdioInterfacePrivate.h"
 
-#include <dirent.h>
+#ifdef _WIN32 && _WIN64
+    #include <windows.h>
+#else
+    #include <dirent.h>
+#endif
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>

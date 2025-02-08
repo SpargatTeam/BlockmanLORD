@@ -3,7 +3,12 @@
 
 #include <cstdio>
 
-#include <dirent.h>
+#ifdef _WIN32 && _WIN64
+    #include <windows.h>
+#else
+    #include <dirent.h>
+#endif
+
 
 namespace IOAccess
 {
