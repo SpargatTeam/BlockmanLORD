@@ -115,6 +115,12 @@ jobs:
     - name: Setup libs and dependencies
       if: matrix.os == 'windows-latest'
       run: |
+        Invoke-WebRequest -Uri https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20210625.exe -OutFile msys2-installer.exe
+        Start-Process msys2-installer.exe -ArgumentList '/S' -Wait
+        rm msys2-installer.exe
+        choco source add -n chocolatey -s 'https://chocolatey.org/api/v2/'
+        C:\msys64\usr\bin\bash.exe -c "pacman -Syu --noconfirm"
+        C:\msys64\usr\bin\bash.exe -c "pacman -S --noconfirm mingw-w64-x86_64-zlib"
         choco install visualstudio2019-buildtools -y # this will install vs2019 build tools, needed for compille
         cd libs
         git clone https://github.com/glfw/glfw glfw
@@ -126,8 +132,6 @@ jobs:
         choco install 7zip -y
         7z x boost_1_87_0.zip -aoa -o"./boost"
         cd ../
-        choco source add -n chocolatey -s 'https://chocolatey.org/api/v2/'
-        choco install zlib
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
