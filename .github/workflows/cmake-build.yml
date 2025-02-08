@@ -115,12 +115,7 @@ jobs:
     - name: Setup libs and dependencies
       if: matrix.os == 'windows-latest'
       run: |
-        Invoke-WebRequest -Uri https://github.com/msys2/msys2-installer/releases/download/2024-12-08/msys2-x86_64-20241208.exe -OutFile msys2-installer.exe
-        Start-Process msys2-installer.exe -ArgumentList '/S' -Wait
-        rm msys2-installer.exe
         choco source add -n chocolatey -s 'https://chocolatey.org/api/v2/'
-        C:\msys64\usr\bin\bash.exe -c "pacman -Syu --noconfirm"
-        C:\msys64\usr\bin\bash.exe -c "pacman -S --noconfirm mingw-w64-x86_64-zlib"
         choco install visualstudio2019-buildtools -y # this will install vs2019 build tools, needed for compille
         git clone https://github.com/microsoft/vcpkg.git vcpkg
         cd vcpkg
