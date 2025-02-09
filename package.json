@@ -23,7 +23,6 @@
     "@motionone/solid": "1latest",
     "@types/react": "1latest",
     "@types/react-dom": "latest",
-    "@vercel/analytics": "latest",
     "astro": "latest",
     "astro-icon": "latest",
     "astro-seo": "latest",

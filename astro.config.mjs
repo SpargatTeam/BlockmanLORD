@@ -8,7 +8,7 @@ import solidJs from "@astrojs/solid-js";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://ultimate-astro-template.vercel.app/",
+  site: "https://spargatteam.github.io/BlockmanLORD/",
   output: "static",
   integrations: [
     tailwind({
