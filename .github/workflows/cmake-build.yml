@@ -91,6 +91,8 @@ jobs:
         git clone https://github.com/madler/zlib zlib
         git clone https://github.com/assimp/assimp assimp
         git clone https://github.com/bulletphysics/bullet3 bullet
+        git clone https://github.com/curl/curl curl
+        git clone https://github.com/libsdl-org/SDL sdl
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         unzip -q boost_1_87_0.zip
         mv boost_1_87_0 boost
@@ -117,6 +119,8 @@ jobs:
         git clone https://github.com/madler/zlib zlib
         git clone https://github.com/assimp/assimp assimp
         git clone https://github.com/bulletphysics/bullet3 bullet
+        git clone https://github.com/curl/curl curl
+        git clone https://github.com/libsdl-org/SDL sdl
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         choco install 7zip -y
         7z x boost_1_87_0.zip -aoa -o"./boost"
@@ -131,6 +135,8 @@ jobs:
         git clone https://github.com/madler/zlib zlib
         git clone https://github.com/assimp/assimp assimp
         git clone https://github.com/bulletphysics/bullet3 bullet
+        git clone https://github.com/curl/curl curl
+        git clone https://github.com/libsdl-org/SDL sdl
         curl -L -o boost_1_87_0.zip https://archives.boost.io/release/1.87.0/source/boost_1_87_0.zip
         unzip -q boost_1_87_0.zip
         mv boost_1_87_0 boost

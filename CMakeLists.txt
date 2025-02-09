@@ -47,7 +47,7 @@ set(ICON_RESOURCE "res/mipmap-xxxhdpi/app_launcher.rc")
 target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
 target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
 ## world
-include(source/get_world)
+#include(source/get_world)
 ## actor
 include(source/get_actor)
 ## lua
