@@ -13,8 +13,25 @@
     "astro": "astro"
   },
   "dependencies": {
-    "tailwindcss": "4.0.0-beta.8",
-    "@tailwindcss/vite": "4.0.0-beta.8",
-    "astro": "latest"
+    "@astrojs/react": "latest",
+    "@astrojs/sitemap": "latest",
+    "@astrojs/solid-js": "latest",
+    "@astrojs/svelte": "latest",
+    "@astrojs/tailwind": "latest",
+    "@astrojs/vue": "latest",
+    "@babel/runtime": "latest",
+    "@motionone/solid": "1latest",
+    "@types/react": "1latest",
+    "@types/react-dom": "latest",
+    "@vercel/analytics": "latest",
+    "astro": "latest",
+    "astro-icon": "latest",
+    "astro-seo": "latest",
+    "framer-motion": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "solid-js": "latest",
+    "svelte": "latest",
+    "tailwindcss": "latest"
   }
 }

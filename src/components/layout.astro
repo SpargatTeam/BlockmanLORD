@@ -6,6 +6,9 @@ const { title } = Astro.props;
 import cursor from "../assets/cursor.svg";
 import cursor_type from "../assets/cursor-type.svg";
 import cursor_hand from "../assets/cursor-hand.svg";
+import Background from "../components/background.astro"
+import Header from "../components/header.astro"
+import Footer from "../components/footer.astro"
 ---
 
 <!doctype html>
@@ -23,7 +26,16 @@ import cursor_hand from "../assets/cursor-hand.svg";
     <title>{title || "BlockmanLORD"}</title>
   </head>
   <body>
+    <Background 
+    primaryBallColor="#ff5733" 
+    secondaryBallColor="#33ff57" 
+    gridColor="rgba(255,255,255,0.1)" 
+    diagonalColor="rgba(255,255,255,0.15)" 
+    vignetteColor="rgba(0,0,0,0.5)" 
+    />
+    <Header/>
     <slot />
+    <Footer/>
   </body>
 </html>
 <style is:global>
@@ -45,13 +57,6 @@ import cursor_hand from "../assets/cursor-hand.svg";
   ::selection {
     background: var(--accent);
     color: white;
-  }
-  body {
-    height: 100vh;
-    /*width: 100%;*/
-	margin: 0;
-    background: linear-gradient(45deg, #330c43 23%, #175d69 95%);
-	position: relative; 
   }
   html {
     color: white;
