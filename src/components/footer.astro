@@ -1,0 +1,35 @@
+---
+import { h } from "astro:jsx";
+---
+
+<footer class="footer">
+  Copyright © 2025 
+  <a href="https://github.com/SpargatTeam" target="_blank">SpargatTeam</a>. 
+  All rights reserved of the project 
+  <a href="https://github.com/SpargatTeam/BlockmanLORD" target="_blank">BlockmanLORD</a>.
+</footer>
+
+<style>
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    z-index: 1000;
+  }
+
+  .footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+</style>
