@@ -14,6 +14,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         build_type: [Release, Debug]
+        c_compiler: [gcc, clang]
+        cpp_compiler: [g++, clang++]
+        framework: [gl, vk, d3d]
         include:
           - os: windows-latest
             c_compiler: clang
