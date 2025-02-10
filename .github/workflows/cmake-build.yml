@@ -18,6 +18,22 @@ jobs:
         cpp_compiler: [g++, clang++, x86_64-w64-mingw32-g++, i686-w64-mingw32-g++]
         framework: [gl, vk, d3d]
         makefile: [Unix Makefiles, MinGW Makefiles, Ninja]
+        include:
+          - os: ubuntu-latest
+            c_compiler: [gcc, clang]
+            cpp_compiler: [g++, clang++]
+            framework: [gl, vk]
+            makefile: [Unix Makefiles, Ninja]
+          - os: windows-latest
+            c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc, clang]
+            cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++, clang++]
+            framework: [gl, vk, 3d3]
+            makefile: [MinGW Makefiles, Ninja]
+          - os: macos-latest
+            c_compiler: clang
+            cpp_compiler: clang++
+            framework: [gl, vk]
+            makefile: [Unix Makefiles, Ninja]
         exclude:
           - os: ubuntu-latest
             c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc]
