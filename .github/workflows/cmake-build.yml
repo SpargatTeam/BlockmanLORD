@@ -18,6 +18,21 @@ jobs:
         cpp_compiler: [g++, clang++, x86_64-w64-mingw32-g++, i686-w64-mingw32-g++]
         framework: [gl, vk, d3d]
         makefile: [Unix Makefiles, MinGW Makefiles, Ninja]
+        exclude:
+          - os: ubuntu-latest
+            c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc]
+            cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++]
+            framework: d3d
+            akefile: MinGW Makefiles
+          - os: macos-latest
+            c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc]
+            cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++]
+            framework: d3d
+            makefile: MinGW Makefiles
+          - os: windows-latest
+            c_compiler: gcc
+            cpp_compiler: g++
+            makefile: Unix Makefiles
 
     steps:
     - uses: actions/checkout@v4
