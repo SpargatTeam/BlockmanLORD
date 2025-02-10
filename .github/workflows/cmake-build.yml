@@ -23,7 +23,7 @@ jobs:
             c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc]
             cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++]
             framework: d3d
-            akefile: MinGW Makefiles
+            makefile: MinGW Makefiles
           - os: macos-latest
             c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc, gcc]
             cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++, g++]
