@@ -13,8 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        build_type: [Debug]
-        c_compiler: [gcc, clang]
+        build_type: [Release, Debug]
         include:
           - os: windows-latest
             c_compiler: clang
@@ -76,11 +75,6 @@ jobs:
             cpp_compiler: clang++
             makefile: Unix Makefiles
             framework: vk
-        exclude:
-          - os: windows-latest
-            c_compiler: gcc
-          - os: macos-latest
-            c_compiler: gcc
 
     steps:
     - uses: actions/checkout@v4
@@ -144,6 +138,7 @@ jobs:
         cd ../
         # dev
         sudo apt install -y build-essential curl git upx binutils 
+        sudo apt install clang
         # x11
         sudo apt install -y libxcursor-dev libxinerama-dev libx11-dev libxext-dev libxrandr-dev libxi-dev libxtst-dev libxfixes-dev libxcb1-dev libxkbcommon-dev libxaw7-dev 
         # wayland
@@ -159,7 +154,9 @@ jobs:
     - name: Setup libs and dependencies (Windows)
       if: matrix.os == 'windows-latest'
       run: |
+        # dev
         choco install mingw
+        choco install llvm
         cd libs
         git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
@@ -189,6 +186,7 @@ jobs:
         cd ../
         # dev
         brew install cmake curl git upx binutils
+        xcode-select --install
         # x11
         brew install libxcursor libxinerama libx11 libxext libxrandr libxi libxtst libxfixes libxcb libxkbcommon libxaw
         # boost
