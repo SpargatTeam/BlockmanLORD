@@ -18,6 +18,7 @@ jobs:
         cpp_compiler: [g++, clang++, x86_64-w64-mingw32-g++, i686-w64-mingw32-g++, cl]
         framework: [gl, vk, d3d]
         makefile: [Unix Makefiles, MinGW Makefiles, Ninja, Visual Studio 17 2022]
+        dev: [BlockmanLORD, GameServer, BlockmanEditor]
         include:
           - os: ubuntu-latest
             c_compiler: [gcc, clang]
