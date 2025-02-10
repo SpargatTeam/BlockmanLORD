@@ -32,21 +32,6 @@ jobs:
             makefile: MinGW Makefiles
             framework: d3d
           - os: windows-latest
-            c_compiler: i686-w64-mingw32-gcc
-            cpp_compiler: i686-w64-mingw32-g++
-            makefile: MinGW Makefiles
-            framework: gl
-          - os: windows-latest
-            c_compiler: i686-w64-mingw32-gcc
-            cpp_compiler: i686-w64-mingw32-g++
-            makefile: MinGW Makefiles
-            framework: vk
-          - os: windows-latest
-            c_compiler: i686-w64-mingw32-gcc
-            cpp_compiler: i686-w64-mingw32-g++
-            makefile: MinGW Makefiles
-            framework: d3d
-          - os: windows-latest
             c_compiler: x86_64-w64-mingw32-gcc
             cpp_compiler: x86_64-w64-mingw32-g++
             makefile: MinGW Makefiles
@@ -215,7 +200,7 @@ jobs:
 
     - name: Configure CMake
       run: >
-        cmake -G "${{ matrix.makefile }}" -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DFRAMEWORK=${{ matrix.framework }}
+        cmake -G "${{ matrix.makefile }}" -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
 
     - name: Build
       run: cmake --build .
