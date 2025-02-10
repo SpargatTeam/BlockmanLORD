@@ -14,8 +14,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         build_type: [Release, Debug]
-        c_compiler: [gcc, clang, x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc]
-        cpp_compiler: [g++, clang++, x86_64-w64-mingw32-g++, i686-w64-mingw32-g++]
+        c_compiler: [gcc, clang, x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc, cl]
+        cpp_compiler: [g++, clang++, x86_64-w64-mingw32-g++, i686-w64-mingw32-g++, cl]
         framework: [gl, vk, d3d]
         makefile: [Unix Makefiles, MinGW Makefiles, Ninja]
         include:
@@ -27,7 +27,7 @@ jobs:
           - os: windows-latest
             c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc, clang]
             cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++, clang++]
-            framework: [gl, vk, 3d3]
+            framework: [gl, vk, d3d]
             makefile: [MinGW Makefiles, Ninja]
           - os: macos-latest
             c_compiler: clang
@@ -36,13 +36,13 @@ jobs:
             makefile: [Unix Makefiles, Ninja]
         exclude:
           - os: ubuntu-latest
-            c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc]
-            cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++]
+            c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc, cl]
+            cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++, cl]
             framework: d3d
             makefile: MinGW Makefiles
           - os: macos-latest
-            c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc, gcc]
-            cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++, g++]
+            c_compiler: [x86_64-w64-mingw32-gcc, i686-w64-mingw32-gcc, gcc, cl]
+            cpp_compiler: [x86_64-w64-mingw32-g++, i686-w64-mingw32-g++, g++, cl]
             framework: d3d
             makefile: MinGW Makefiles
           - os: windows-latest
