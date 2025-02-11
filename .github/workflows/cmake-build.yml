@@ -118,7 +118,6 @@ jobs:
         cd ../
         # dev
         brew install cmake curl git upx binutils
-        xcode-select --install
         # x11
         brew install libxcursor libxinerama libx11 libxext libxrandr libxi libxtst libxfixes libxcb libxkbcommon libxaw
         # boost
