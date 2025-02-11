@@ -17,15 +17,6 @@ target_sources(${PROJECT_NAME} PRIVATE
     ${IMGUI_DIR}/imgui_tables.cpp
     ${IMGUI_DIR}/imgui_demo.cpp
 )
-if(USE_OPENGL)
-    include(get_glfw)
-    include(get_opengl)
-    target_sources(${PROJECT_NAME} PRIVATE
-        ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
-        ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
-    )
-    target_compile_definitions(${PROJECT_NAME} PRIVATE IMGUI_IMPL_OPENGL_LOADER_GLAD)
-endif()
 if(USE_GLES)
     include(get_gles)
     target_sources(${PROJECT_NAME} PRIVATE

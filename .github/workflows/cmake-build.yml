@@ -18,7 +18,7 @@ jobs:
         cpp_compiler: [clang++]
         framework: [vk, d3d]
         makefile: [Ninja]
-        dev: [BlockmanLORD, GameServer, BlockmanEditor]
+        #dev: [BlockmanLORD, GameServer, BlockmanEditor] # re-add me later
         exclude:
           - os: ubuntu-latest
             framework: d3d
@@ -32,6 +32,13 @@ jobs:
       id: strings
       shell: bash
       run: echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+
+    # ninja
+    - name: Setup Ninja
+      uses: ashutoshvarma/setup-ninja@master
+      with:
+          # ninja version to download. Default: 1.10.0
+          version: 1.10.0
 
     # vulkan 1.3
     - name: Install Vulkan SDK
@@ -67,7 +74,6 @@ jobs:
         cd ../
         # dev
         sudo apt install -y build-essential curl git upx binutils 
-        sudo apt install clang
         # x11
         sudo apt install -y libxcursor-dev libxinerama-dev libx11-dev libxext-dev libxrandr-dev libxi-dev libxtst-dev libxfixes-dev libxcb1-dev libxkbcommon-dev libxaw7-dev 
         # wayland

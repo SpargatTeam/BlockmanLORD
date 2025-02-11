@@ -18,10 +18,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 # depencies
 ## cpm
 include(get_cpm)
-## opengl 
-include(get_opengl)
-## opengl es
-#include(get_gles) # TODO:Fix me later
 ## directx
 #include(get_dx)
 ## vulkan
