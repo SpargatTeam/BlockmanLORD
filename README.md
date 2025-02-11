@@ -17,6 +17,8 @@
 
 [![Stargazers repo roster for @SpargatTeam/BlockmanLORD](https://reporoster.com/stars/SpargatTeam/BlockmanLORD)](https://github.com/SpargatTeam/BlockmanLORD/stargazers)
 
+## Build status
+
 [![CMake build status](https://github.com/SpargatTeam/BlockmanLORD/actions/workflows/cmake-build.yml/badge.svg)](https://github.com/SpargatTeam/BlockmanLORD/actions)
 
 [![Web build status](https://github.com/SpargatTeam/BlockmanLORD/actions/workflows/web-deploy.yml/badge.svg)](https://github.com/SpargatTeam/BlockmanLORD/actions)
@@ -41,7 +43,7 @@
         <tr>
             <td>3d systems</td>
             <td>open gl, open gl es</td>
-            <td>vulkan, directx, open gl, open gl es, vulkan</td>
+            <td>vulkan, directx</td>
         </tr>
         <tr>
             <td>3d graphics</td>
@@ -54,8 +56,18 @@
             <td>.obj .fbx .mesh.xml .tga .png .jpg .mca .gltf .glb and more...</td>
         </tr>
         <tr>
-            <td>Owners</td>
-            <td>SandBoxOl Network</td>
+            <td>Made-in</td>
+            <td>CMake/Unity</td>
+            <td>CMake</td>
+        </tr>
+        <tr>
+            <td>Country-made</td>
+            <td>China</td>
+            <td>Romanian</td>
+        </tr>
+        <tr>
+            <td>Owner</td>
+            <td>SandBoxOl Network/Gverse</td>
             <td>SpargatTeam</td>
         </tr>
     </tbody>
@@ -65,5 +77,5 @@
 
 ```bash
 cmake .
-cmake --build .
+cmake --build . # or make -k
 ```
