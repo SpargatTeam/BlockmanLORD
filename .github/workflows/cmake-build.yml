@@ -19,6 +19,53 @@ jobs:
         framework: [gl, vk, d3d]
         makefile: [Unix Makefiles, MinGW Makefiles, Ninja, Visual Studio 17 2022]
         dev: [BlockmanLORD, GameServer, BlockmanEditor]
+        exclude:
+          - os: ubuntu-latest
+            c_compiler: x86_64-w64-mingw32-gcc
+          - os: ubuntu-latest
+            c_compiler: i686-w64-mingw32-gcc
+          - os: ubuntu-latest
+            c_compiler: cl
+          - os: ubuntu-latest
+            cpp_compiler: x86_64-w64-mingw32-g++
+          - os: ubuntu-latest
+            cpp_compiler: i686-w64-mingw32-g++
+          - os: ubuntu-latest
+            cpp_compiler: cl
+          - os: ubuntu-latest
+            framework: d3d
+          - os: ubuntu-latest
+            makefile: MinGW Makefiles
+          - os: ubuntu-latest
+            makefile:  Visual Studio 17 2022
+          - os: macos-latest
+            c_compiler: x86_64-w64-mingw32-gcc
+          - os: macos-latest
+            c_compiler: i686-w64-mingw32-gcc
+          - os: macos-latest
+            c_compiler: gcc
+          - os: macos-latest
+            c_compiler: cl
+          - os: macos-latest
+            cpp_compiler: x86_64-w64-mingw32-g++
+          - os: macos-latest
+            cpp_compiler: i686-w64-mingw32-g++
+          - os: macos-latest
+            cpp_compiler: g++
+          - os: macos-latest
+            cpp_compiler: cl
+          - os: macos-latest
+            framework: d3d
+          - os: macos-latest
+            makefile: MinGW Makefiles
+          - os: macos-latest
+            makefile: Visual Studio 17 2022
+          - os: windows-latest
+            c_compiler: gcc
+          - os: windows-latest
+            cpp_compiler: g++
+          - os: windows-latest
+            makefile: Unix Makefiles
 
     steps:
     - uses: actions/checkout@v4
