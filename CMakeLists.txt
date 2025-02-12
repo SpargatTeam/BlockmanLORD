@@ -87,7 +87,7 @@ elseif(BLORD_BUILD STREQUAL "GameServer")
     ## boost
     include(get_boost)
     ## network
-    include(get_network)
+    include(source/get_network)
     ## common 
     include(source/get_common)
 elseif(BLORD_BUILD STREQUAL "BlockmanEditor")
