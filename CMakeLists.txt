@@ -31,6 +31,16 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     add_compile_definitions(BLORD_RELEASE)
     set(CMAKE_BINARY_DIR "${CMAKE_SOURCE_DIR}/build/release/${CMAKE_SYSTEM_NAME}")
 endif()
+if(NOT BLORD_MODEL OR 
+    NOT BLORD_MODEL MATCHES "^(d3d|vk)$")
+    set(BLORD_MODEL "vk")
+    message(STATUS "BLORD_MODEL not set or invalid. Defaulting to vk.")
+endif()
+if(NOT BLORD_BUILD OR 
+    NOT BLORD_BUILD MATCHES "^(BlockmanLORD|GameServer|BlockmanEditor)$")
+    set(BLORD_BUILD "BlockmanLORD")
+    message(STATUS "BLORD_BUILD not set or invalid. Defaulting to BlockmanLORD.")
+endif()
 ### Sources
 ## client
 file(GLOB_RECURSE CLIENT_SOURCE
