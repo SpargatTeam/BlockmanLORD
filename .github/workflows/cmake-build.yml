@@ -18,7 +18,7 @@ jobs:
         cpp_compiler: [clang++]
         framework: [vk, d3d]
         makefile: [Ninja]
-        #dev: [BlockmanLORD, GameServer, BlockmanEditor] # re-add me later
+        dev: [BlockmanLORD, GameServer, BlockmanEditor]
         exclude:
           - os: ubuntu-latest
             framework: d3d
@@ -124,7 +124,7 @@ jobs:
 
     - name: Configure CMake
       run: >
-        cmake -G "${{ matrix.makefile }}" -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+        cmake -G "${{ matrix.makefile }}" -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DBLORD_MODEL=${{ matrix.framework }} -DBLORD_BUILD=${{ matrix.dev }}
 
     - name: Build
       run: cmake --build .

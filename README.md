@@ -73,9 +73,11 @@
     </tbody>
 </table>
 
-### Build BlockmanLORD 
+## Build BlockmanLORD 
+
+### For build you will need Vulkan or DirectX, CMake 3.30 and C++23\
 
 ```bash
-cmake .
+cmake -DBLORD_MODEL=vk . # or d3d if you use directx
 cmake --build . # or make -k
 ```
