@@ -15,12 +15,34 @@ file(GLOB_RECURSE SOURCE_FILES
 )
 add_library(${PROJECT_NAME} STATIC ${SOURCE_FILES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-# depencies
+### depencies
 ## cpm
 include(get_cpm)
-## directx
-#include(get_dx)
-## vulkan
-include(get_vulkan)
+## 3d
+if(BLORD_MODEL STREQUAL "d3d")
+    ## directx
+    include(get_dx)
+    ## source
+    file(GLOB_RECURSE MODEL_SOURCE
+        ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.h
+    )
+    add_library(${PROJECT_NAME} STATIC ${MODEL_SOURCE})
+elseif(BLORD_MODEL STREQUAL "vk")
+    ## vulkan
+    include(get_vulkan)
+    ## source
+    file(GLOB_RECURSE MODEL_SOURCE
+        ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.h
+    )
+    add_library(${PROJECT_NAME} STATIC ${MODEL_SOURCE})
+else()
+    message(FATAL_ERROR "BLORD_MODEL is not valid!")
+endif()
 ## assimp
 include(get_assimp)

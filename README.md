@@ -75,7 +75,7 @@
 
 ## Build BlockmanLORD 
 
-### For build you will need Vulkan or DirectX, CMake 3.30 and C++23\
+### For build you will need Vulkan or DirectX 11, CMake 3.30 and C++23
 
 ```bash
 cmake -DBLORD_MODEL=vk . # or d3d if you use directx

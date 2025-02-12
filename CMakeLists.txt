@@ -42,32 +42,76 @@ if(NOT BLORD_BUILD OR
     message(STATUS "BLORD_BUILD not set or invalid. Defaulting to BlockmanLORD.")
 endif()
 ### Sources
-## client
-file(GLOB_RECURSE CLIENT_SOURCE
-    ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.hpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.h
-)
-add_executable(${PROJECT_NAME} ${CLIENT_SOURCE})
-## 3d aka model
-include(source/get_model)
-## icon
-set(ICON_RESOURCE "res/mipmap-xxxhdpi/app_launcher.rc")
-target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
-target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
-## world
-#include(source/get_world)
-## actor
-include(source/get_actor)
-## lua
-include(source/get_lua)
-## gui
-include(source/get_gui)
-## network
-include(source/get_network)
-## common 
-include(source/get_common)
+if(BLORD_BUILD STREQUAL "BlockmanLORD")
+    ## client
+    file(GLOB_RECURSE CLIENT_SOURCE
+        ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.h
+    )
+    add_executable(${PROJECT_NAME} ${CLIENT_SOURCE})
+    ## 3d aka model
+    include(source/get_model)
+    ## icon
+    set(ICON_RESOURCE "res/mipmap-xxxhdpi/app_launcher.rc")
+    target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
+    target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
+    ## world
+    #include(source/get_world)
+    ## actor
+    include(source/get_actor)
+    ## lua
+    include(source/get_lua)
+    ## gui
+    include(source/get_gui)
+    ## network
+    include(source/get_network)
+    ## common 
+    include(source/get_common)
+elseif(BLORD_BUILD STREQUAL "GameServer")
+    ## server
+    file(GLOB_RECURSE SERVER_SOURCE
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/server/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/server/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/server/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/server/*.h
+    )
+    add_executable(${PROJECT_NAME} ${SERVER_SOURCE})
+    ## boost
+    include(get_boost)
+    ## network
+    include(get_network)
+    ## common 
+    include(source/get_common)
+elseif(BLORD_BUILD STREQUAL "BlockmanEditor")
+    ## editor
+    file(GLOB_RECURSE EDITOR_SOURCE
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/editor/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/editor/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/editor/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/editor/*.h
+    )
+    add_executable(${PROJECT_NAME} ${EDITOR_SOURCE})
+    ## 3d aka model
+    include(source/get_model)
+    ## icon
+    set(ICON_RESOURCE "res/mipmap-xxxhdpi/app_launcher.rc")
+    target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
+    target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
+    ## world
+    #include(source/get_world)
+    ## actor
+    include(source/get_actor)
+    ## lua
+    include(source/get_lua)
+    ## gui
+    include(source/get_gui)
+    ## network
+    include(source/get_network)
+    ## common 
+    include(source/get_common)
+endif()
 ### Security
 # by @Comical
 if(CMAKE_BUILD_TYPE STREQUAL "Release" AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
