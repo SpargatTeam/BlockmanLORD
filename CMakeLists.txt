@@ -8,6 +8,7 @@
 cmake_minimum_required(VERSION 3.30)
 project(blord VERSION 10000 LANGUAGES C CXX)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+add_executable(${PROJECT_NAME} PUBLIC main.cpp)
 ## settings
 set(CMAKE_CXX_STANDARD 23)
 # is this really needed? from @Comical
