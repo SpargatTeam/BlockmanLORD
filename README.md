@@ -41,19 +41,9 @@
     </thead>
     <tbody>
         <tr>
-            <td>3d systems</td>
-            <td>open gl, open gl es</td>
-            <td>vulkan, directx</td>
-        </tr>
-        <tr>
-            <td>3d graphics</td>
-            <td>not complex</td>
-            <td>a few more complex</td>
-        </tr>
-        <tr>
             <td>3d models</td>
-            <td>.mesh .actor .effect .anim .skel .tga .mca</td>
-            <td>.obj .fbx .mesh.xml .tga .png .jpg .mca .gltf .glb and more...</td>
+            <td>.mesh .actor .effect .anim .skel .mca</td>
+            <td>.obj .fbx .mesh.xml .mca .gltf .glb and more...</td>
         </tr>
         <tr>
             <td>Made-in</td>

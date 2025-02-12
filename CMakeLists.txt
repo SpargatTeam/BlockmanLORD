@@ -6,11 +6,21 @@
 ##############################################################
 ### CMake
 cmake_minimum_required(VERSION 3.30)
-project(blord VERSION 10000 LANGUAGES C CXX)
+cmake_policy(VERSION 3.30)
+if(NOT BLORD_BUILD OR 
+    NOT BLORD_BUILD MATCHES "^(BlockmanLORD|GameServer|BlockmanEditor)$")
+    set(BLORD_BUILD "BlockmanLORD")
+    message(STATUS "BLORD_BUILD not set or invalid. Defaulting to BlockmanLORD.")
+endif()
+project(${BLORD_BUILD} VERSION 10000 LANGUAGES C CXX)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
-add_executable(${PROJECT_NAME} PUBLIC main.cpp)
 ## settings
 set(CMAKE_CXX_STANDARD 23)
+# our politicy
+if(POLICY CMP0002)
+    cmake_policy(SET CMP0002 OLD)
+    set(CMAKE_POLICY_WARNING_CMP0002 OFF)
+endif()
 # is this really needed? from @Comical
 #target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -36,11 +46,6 @@ if(NOT BLORD_MODEL OR
     NOT BLORD_MODEL MATCHES "^(d3d|vk)$")
     set(BLORD_MODEL "vk")
     message(STATUS "BLORD_MODEL not set or invalid. Defaulting to vk.")
-endif()
-if(NOT BLORD_BUILD OR 
-    NOT BLORD_BUILD MATCHES "^(BlockmanLORD|GameServer|BlockmanEditor)$")
-    set(BLORD_BUILD "BlockmanLORD")
-    message(STATUS "BLORD_BUILD not set or invalid. Defaulting to BlockmanLORD.")
 endif()
 ### Sources
 if(BLORD_BUILD STREQUAL "BlockmanLORD")

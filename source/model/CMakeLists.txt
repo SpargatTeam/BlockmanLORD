@@ -29,7 +29,7 @@ if(BLORD_MODEL STREQUAL "d3d")
         ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.h
     )
-    add_library(${PROJECT_NAME} STATIC ${MODEL_SOURCE})
+    target_sources(${PROJECT_NAME} PRIVATE ${MODEL_SOURCE})
 elseif(BLORD_MODEL STREQUAL "vk")
     ## vulkan
     include(get_vulkan)
@@ -40,7 +40,7 @@ elseif(BLORD_MODEL STREQUAL "vk")
         ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.hpp
         ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.h
     )
-    add_library(${PROJECT_NAME} STATIC ${MODEL_SOURCE})
+    target_sources(${PROJECT_NAME} PRIVATE ${MODEL_SOURCE})
 else()
     message(FATAL_ERROR "BLORD_MODEL is not valid!")
 endif()
