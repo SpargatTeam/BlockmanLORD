@@ -132,4 +132,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
+        name: blockmanlord-buildOn.${{ matrix.os }}-modelSystem.${{ matrix.framework }}
         path: ${{ github.workspace }}
