@@ -23,7 +23,7 @@ if(NOT TARGET PhysX)
     option(PHYSX_BUILD_SHARED "Build PhysX as shared library" OFF)
     option(PHYSX_GENERATE_STATIC_LIBRARIES "Generate static libraries" ON)
     option(PX_SUPPORT_PVD "Enable PhysX Visual Debugger support" OFF)
-    add_subdirectory(${PHYSX_ROOT}/physx ${CMAKE_BINARY_DIR}/physx_build)
+    add_subdirectory(${PHYSX_ROOT}/physx/compiler/public ${CMAKE_BINARY_DIR}/physx_build)
     include_directories(
         ${PHYSX_ROOT}/pxshared/include
         ${PHYSX_ROOT}/physx/include
