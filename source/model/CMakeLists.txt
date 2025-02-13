@@ -47,4 +47,4 @@ endif()
 ## assimp
 include(get_assimp)
 ## physx
-include(get_physx)
+#include(get_physx) # will be fixed later
