@@ -46,5 +46,5 @@ else()
 endif()
 ## assimp
 include(get_assimp)
-## bullet
-include(get_bullet)
+## physx
+include(get_physx)
