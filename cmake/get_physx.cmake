@@ -5,10 +5,10 @@
 #
 ##############################################################
 set(PHYSX_ROOT "${CMAKE_SOURCE_DIR}/libs/physx")
-if(NOT EXISTS ${PHYSX_ROOT}/source)
+if(NOT EXISTS ${PHYSX_ROOT}/physx)
     message(STATUS "PhysX nu a fost găsit. Se clonează din repository...")
     execute_process(
-        COMMAND git clone --recursive https://github.com/NVIDIA-Omniverse/PhysX ${PHYSX_ROOT}
+        COMMAND git clone --recursive https://github.com/NVIDIAGameWorks/PhysX ${PHYSX_ROOT}
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/libs
     )
     execute_process(
@@ -16,7 +16,7 @@ if(NOT EXISTS ${PHYSX_ROOT}/source)
         WORKING_DIRECTORY ${PHYSX_ROOT}
     )
 endif()
-if(NOT EXISTS ${PHYSX_ROOT}/source)
+if(NOT EXISTS ${PHYSX_ROOT}/physx/source)
     message(FATAL_ERROR "Eroare: Directorul ${PHYSX_ROOT} nu conține sursele PhysX!")
 endif()
 if(NOT TARGET PhysX)
