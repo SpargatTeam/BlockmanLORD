@@ -17,7 +17,6 @@ jobs:
         c_compiler: [clang]
         cpp_compiler: [clang++]
         framework: [vk, d3d]
-        makefile: [Ninja]
         dev: [BlockmanLORD, GameServer, BlockmanEditor]
         exclude:
           - os: ubuntu-latest
@@ -36,15 +35,22 @@ jobs:
           version: 1.10.0
 
     # vulkan 1.3
-    - name: Install Vulkan SDK
-      uses: jakoch/install-vulkan-sdk-action@v1.1.0
+    #- name: Install Vulkan SDK
+    #  uses: jakoch/install-vulkan-sdk-action@v1.1.0
+    #  if: matrix.framework == 'vk'
+    #  with:
+    #      vulkan_version: 1.3.283.0
+    #      optional_components: com.lunarg.vulkan.vma
+    #      install_runtime: true
+    #      cache: true
+    #      stripdown: true
+    - name: Prepare Vulkan SDK
+      uses: humbletim/setup-vulkan-sdk@v1.2.0
       if: matrix.framework == 'vk'
       with:
-          vulkan_version: 1.3.283.0
-          optional_components: com.lunarg.vulkan.vma
-          install_runtime: true
-          cache: true
-          stripdown: true
+          vulkan-query-version: 1.3.283.0
+          vulkan-components: Vulkan-Headers, Vulkan-Loader
+          vulkan-use-cache: true
 
     # directx 10, 11 and 12
     - name: Install DirectX SDK (Windows)
@@ -57,7 +63,6 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         cd libs
-        git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
         git clone https://github.com/assimp/assimp assimp
         git clone https://github.com/bulletphysics/bullet3 bullet
@@ -85,7 +90,6 @@ jobs:
       if: matrix.os == 'windows-latest'
       run: |
         cd libs
-        git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
         git clone https://github.com/assimp/assimp assimp
         git clone https://github.com/bulletphysics/bullet3 bullet
@@ -95,13 +99,13 @@ jobs:
         choco install 7zip -y
         7z x boost_1_87_0.zip -aoa -o"./boost"
         cd ../
+        choco install visualstudio2019buildtools
 
     # made on macos
     - name: Setup libs and dependencies (macOS)
       if: matrix.os == 'macos-latest'
       run: |
         cd libs
-        git clone https://github.com/glfw/glfw glfw
         git clone https://github.com/madler/zlib zlib
         git clone https://github.com/assimp/assimp assimp
         git clone https://github.com/bulletphysics/bullet3 bullet
@@ -124,7 +128,7 @@ jobs:
 
     - name: Configure CMake
       run: >
-        cmake -G "${{ matrix.makefile }}" -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DBLORD_MODEL=${{ matrix.framework }} -DBLORD_BUILD=${{ matrix.dev }}
+        cmake -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }} -DCMAKE_C_COMPILER=${{ matrix.c_compiler }} -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DBLORD_MODEL=${{ matrix.framework }} -DBLORD_BUILD=${{ matrix.dev }}
 
     - name: Build
       run: cmake --build .
