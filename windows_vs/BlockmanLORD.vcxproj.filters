@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\comical\Downloads\BlockmanLORD-develop\BlockmanLORD-develop\source\client\blord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\comical\Downloads\BlockmanLORD-develop\BlockmanLORD-develop\source\client\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\comical\Downloads\BlockmanLORD-develop\BlockmanLORD-develop\source\client\blord.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\comical\Downloads\BlockmanLORD-develop\BlockmanLORD-develop\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\comical\Downloads\BlockmanLORD-develop\BlockmanLORD-develop\res\mipmap-xxxhdpi\app_launcher.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7BA10BB3-E00C-34BB-AE3B-0F4C9AF65919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0BDB2C12-414A-3C5D-800A-9F5F13FBB863}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
