@@ -86,11 +86,16 @@ elseif(BLORD_BUILD STREQUAL "GameServer")
     add_executable(${PROJECT_NAME} ${SERVER_SOURCE})
     ## boost
     include(get_boost)
+    ## sol2
+    include(get_sol2)
+    ## lua
+    include(source/get_lua)
     ## network
     include(source/get_network)
     ## common 
     include(source/get_common)
 elseif(BLORD_BUILD STREQUAL "BlockmanEditor")
+    ## editor
     ## editor
     file(GLOB_RECURSE EDITOR_SOURCE
         ${CMAKE_CURRENT_SOURCE_DIR}/dev/editor/*.cpp

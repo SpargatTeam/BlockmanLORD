@@ -10,3 +10,12 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
+CPM_modules
+build
+assimp_build
+cpm-package-lock.cmake
+libs
+BlockmanLORD
+GameServer
+BlockmanEditor
+windows_vs
