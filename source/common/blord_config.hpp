@@ -1,2 +1,2 @@
 #pragma once
-#define BLORD_GAMESERVER_PORT = 19180
+#define BLORD_GAMESERVER_PORT 19180
