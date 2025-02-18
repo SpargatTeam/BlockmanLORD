@@ -5,7 +5,7 @@
 #                                                            #
 ##############################################################
 ### CMake
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.15)
 if(NOT BLORD_BUILD OR 
     NOT BLORD_BUILD MATCHES "^(BlockmanLORD|GameServer|BlockmanEditor)$")
     set(BLORD_BUILD "BlockmanLORD")

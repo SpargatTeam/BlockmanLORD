@@ -4,7 +4,7 @@
 # BlockmanLORD of Blockman Launcher CMake
 #
 ##############################################################
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.15)
 project(blord_gui)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 file(GLOB_RECURSE SOURCE_FILES
