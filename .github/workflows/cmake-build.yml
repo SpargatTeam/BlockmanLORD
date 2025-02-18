@@ -35,7 +35,7 @@ jobs:
       with:
           vulkan-query-version: 1.3.283.0
           vulkan-components: Vulkan-Headers, Vulkan-Loader
-          vulkan-use-cache: true
+          # vulkan-use-cache: true # what if we remove this? is cache v2 no longer used?
 
     # directx 10, 11 and 12
     - name: Install DirectX SDK (Windows)
