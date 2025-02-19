@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=@PROJECT_NAME@
+Icon=@CMAKE_BINARY_DIR@/res/mipmap-xxxhdpi/app_launcher.png
+Type=Application
+Categories=Utility;
