@@ -42,8 +42,9 @@ jobs:
       run: |
         choco install directx -y
 
+    # open gl
     - name: Install OpenGL
-      uses: openrndr/setup-opengl@v1.1
+      uses: NishkarshRaj/OpenGL_Actions@1.0
       if: matrix.framework == 'gl'
 
     # made on linux
