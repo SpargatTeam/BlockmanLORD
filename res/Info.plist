@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+  <dict>
+    <key>BLORD</key>
+    <string>BlockmanLORD</string>
+    <key>Spargat</key>
+    <string>com.spargat.blockmanlord</string>
+    <key>r10000-open1</key>
+    <string>1.0.0</string>
+  </dict>
+</plist>

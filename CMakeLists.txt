@@ -35,18 +35,18 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     set(CMAKE_BINARY_DIR "${CMAKE_SOURCE_DIR}/build/release/${CMAKE_SYSTEM_NAME}")
 endif()
 if(NOT BLORD_MODEL OR 
-    NOT BLORD_MODEL MATCHES "^(d3d|vk)$")
-    set(BLORD_MODEL "vk")
-    message(STATUS "BLORD_MODEL not set or invalid. Defaulting to vk.")
+    NOT BLORD_MODEL MATCHES "^(d3d|vk|gl|gles)$")
+    set(BLORD_MODEL "gl")
+    message(STATUS "BLORD_MODEL not set or invalid. Defaulting to gl.")
 endif()
 ### Sources
 if(BLORD_BUILD STREQUAL "BlockmanLORD")
     ## client
     file(GLOB_RECURSE CLIENT_SOURCE
-        ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/source/client/*.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/client/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/client/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/client/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/dev/client/*.h
     )
     add_executable(${PROJECT_NAME} ${CLIENT_SOURCE})
     ## 3d aka model
@@ -55,6 +55,28 @@ if(BLORD_BUILD STREQUAL "BlockmanLORD")
     set(ICON_RESOURCE "res/mipmap-xxxhdpi/app_launcher.rc")
     target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
     target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
+    ## configs
+    # Verifică dacă este pe Windows
+    if(WIN32)
+        set(MY_APP_MANIFEST "${CMAKE_SOURCE_DIR}/res/app.manifest")
+        set_target_properties(${PROJECT_NAME} PROPERTIES
+            WIN32_EXECUTABLE TRUE
+            RESOURCE "${MY_APP_MANIFEST}"
+        )
+    endif()
+    if(UNIX AND NOT APPLE)
+        configure_file("${CMAKE_SOURCE_DIR}/app.desktop.in" "${CMAKE_BINARY_DIR}/res/app.desktop" @ONLY)
+        install(FILES "${CMAKE_BINARY_DIR}/myapp.desktop" DESTINATION "/usr/share/applications")
+    endif()
+    if(APPLE) # re-config me
+        set(MAC_APP_BUNDLE "${CMAKE_BINARY_DIR}/BlockmanLORD.app")
+        file(MAKE_DIRECTORY "${MAC_APP_BUNDLE}/Contents/MacOS")
+        file(MAKE_DIRECTORY "${MAC_APP_BUNDLE}/Contents/Resources")
+        configure_file("${CMAKE_SOURCE_DIR}/res/Info.plist" "${MAC_APP_BUNDLE}/Contents/Info.plist" COPYONLY)
+        set(MY_APP_EXECUTABLE "${CMAKE_BINARY_DIR}/res")
+        configure_file("${MY_APP_EXECUTABLE}" "${MAC_APP_BUNDLE}/Contents/MacOS/res" COPYONLY)
+    endif()
+
     ## world
     #include(source/get_world)
     ## actor
