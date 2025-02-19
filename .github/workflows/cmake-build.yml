@@ -54,16 +54,17 @@ jobs:
         choco install directx -y
 
     # open gl
-    - name: Install OpenGL
-      if: matrix.framework == 'gl'
-      run: |
-        if [ $RUNNER_OS == 'ubuntu-latest' ]; then
-          sudo apt install -y libgl1-mesa-dev
-        elif [ $RUNNER_OS == 'macos-latest' ]; then
-          brew install libomp
-        elif [ $RUNNER_OS == 'windows-latest' ]; then
-          choco install mingw freeglut -y
-        fi
+    - name: Install OpenGL (Linux)
+      if: matrix.os == 'ubuntu-latest' && matrix.framework == 'gl'
+      run: sudo apt install -y libgl1-mesa-dev
+
+    - name: Install OpenGL (macOS)
+      if: matrix.os == 'macos-latest' && matrix.framework == 'gl'
+      run: brew install libomp
+
+    - name: Install OpenGL (Windows)
+      if: matrix.os == 'windows-latest' && matrix.framework == 'gl'
+      run: choco install mingw freeglut -y
 
     # made on linux
     - name: Setup libs and depencies (Linux)
