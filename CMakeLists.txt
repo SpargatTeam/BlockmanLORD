@@ -56,27 +56,27 @@ if(BLORD_BUILD STREQUAL "BlockmanLORD")
     target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
     target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
     ## configs
-    # Verifică dacă este pe Windows
     if(WIN32)
         set(MY_APP_MANIFEST "${CMAKE_SOURCE_DIR}/res/app.manifest")
-        set_target_properties(${PROJECT_NAME} PROPERTIES
-            WIN32_EXECUTABLE TRUE
-            RESOURCE "${MY_APP_MANIFEST}"
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy "${MY_APP_MANIFEST}" "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
         )
+        set_target_properties(${PROJECT_NAME} PROPERTIES WIN32_EXECUTABLE TRUE)
     endif()
     if(UNIX AND NOT APPLE)
         configure_file("${CMAKE_SOURCE_DIR}/app.desktop.in" "${CMAKE_BINARY_DIR}/res/app.desktop" @ONLY)
-        install(FILES "${CMAKE_BINARY_DIR}/myapp.desktop" DESTINATION "/usr/share/applications")
+        install(FILES "${CMAKE_BINARY_DIR}/res/app.desktop" DESTINATION "/usr/share/applications")
     endif()
-    if(APPLE) # re-config me
+    if(APPLE)
         set(MAC_APP_BUNDLE "${CMAKE_BINARY_DIR}/BlockmanLORD.app")
         file(MAKE_DIRECTORY "${MAC_APP_BUNDLE}/Contents/MacOS")
         file(MAKE_DIRECTORY "${MAC_APP_BUNDLE}/Contents/Resources")
         configure_file("${CMAKE_SOURCE_DIR}/res/Info.plist" "${MAC_APP_BUNDLE}/Contents/Info.plist" COPYONLY)
-        set(MY_APP_EXECUTABLE "${CMAKE_BINARY_DIR}/res")
-        configure_file("${MY_APP_EXECUTABLE}" "${MAC_APP_BUNDLE}/Contents/MacOS/res" COPYONLY)
+        set(MY_APP_EXECUTABLE "$<TARGET_FILE:${PROJECT_NAME}>")
+        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy "${MY_APP_EXECUTABLE}" "${MAC_APP_BUNDLE}/Contents/MacOS/${PROJECT_NAME}"
+        )
     endif()
-
     ## world
     #include(source/get_world)
     ## actor
