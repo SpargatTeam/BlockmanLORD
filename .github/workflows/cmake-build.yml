@@ -16,7 +16,7 @@ jobs:
         build_type: [Debug]
         c_compiler: [clang]
         cpp_compiler: [clang++]
-        framework: [vk, d3d]
+        framework: [gl, vk]
         dev: [BlockmanLORD, GameServer, BlockmanEditor]
         exclude:
           - os: ubuntu-latest

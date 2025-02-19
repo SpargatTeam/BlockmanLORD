@@ -56,13 +56,13 @@ if(BLORD_BUILD STREQUAL "BlockmanLORD")
     target_sources(${PROJECT_NAME} PRIVATE ${ICON_RESOURCE})
     target_compile_definitions(${PROJECT_NAME} PRIVATE ICON_RESOURCE=1)
     ## configs
-    if(WIN32)
-        set(MY_APP_MANIFEST "${CMAKE_SOURCE_DIR}/res/app.manifest")
-        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy "${MY_APP_MANIFEST}" "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
-        )
-        set_target_properties(${PROJECT_NAME} PROPERTIES WIN32_EXECUTABLE TRUE)
-    endif()
+    #if(WIN32)
+    #    set(MY_APP_MANIFEST "${CMAKE_SOURCE_DIR}/res/app.manifest")
+    #    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    #        COMMAND ${CMAKE_COMMAND} -E copy "${MY_APP_MANIFEST}" "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
+    #    )
+    #    set_target_properties(${PROJECT_NAME} PROPERTIES WIN32_EXECUTABLE TRUE)
+    #endif() # fix me later
     if(UNIX AND NOT APPLE)
         configure_file("${CMAKE_SOURCE_DIR}/res/app.desktop.in" "${CMAKE_BINARY_DIR}/res/app.desktop" @ONLY)
         install(FILES "${CMAKE_BINARY_DIR}/res/app.desktop" DESTINATION "/usr/share/applications")
