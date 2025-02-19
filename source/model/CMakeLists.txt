@@ -19,26 +19,59 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 ## cpm
 include(get_cpm)
 ## 3d
-if(BLORD_MODEL STREQUAL "d3d")
-    ## directx
-    include(get_dx)
+if(BLORD_MODEL STREQUAL "gl")
+    ## opengl
+    include(get_gl)
     ## source
     file(GLOB_RECURSE MODEL_SOURCE
-        ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/directx/*.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/gl/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/gl/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/gl/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/gl/*.h
+    )
+    target_sources(${PROJECT_NAME} PRIVATE ${MODEL_SOURCE})
+elseif(BLORD_MODEL STREQUAL "gles")
+    ## opengl es
+    include(get_gles)
+    ## source
+    file(GLOB_RECURSE MODEL_SOURCE
+        ${CMAKE_CURRENT_SOURCE_DIR}/gles/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/gles/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/gles/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/gles/*.h
     )
     target_sources(${PROJECT_NAME} PRIVATE ${MODEL_SOURCE})
 elseif(BLORD_MODEL STREQUAL "vk")
     ## vulkan
-    include(get_vulkan)
+    include(get_vk)
     ## source
     file(GLOB_RECURSE MODEL_SOURCE
-        ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.c
-        ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.hpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/vulkan/*.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/vk/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/vk/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/vk/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/vk/*.h
+    )
+    target_sources(${PROJECT_NAME} PRIVATE ${MODEL_SOURCE})
+elseif(BLORD_MODEL STREQUAL "d3d")
+    ## directx
+    include(get_dx)
+    ## source
+    file(GLOB_RECURSE MODEL_SOURCE
+        ${CMAKE_CURRENT_SOURCE_DIR}/d3d/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/d3d/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/d3d/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/d3d/*.h
+    )
+    target_sources(${PROJECT_NAME} PRIVATE ${MODEL_SOURCE})
+elseif(BLORD_MODEL STREQUAL "m")
+    ## metal
+    include(get_m)
+    ## source
+    file(GLOB_RECURSE MODEL_SOURCE
+        ${CMAKE_CURRENT_SOURCE_DIR}/m/*.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/m/*.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/m/*.hpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/m/*.h
     )
     target_sources(${PROJECT_NAME} PRIVATE ${MODEL_SOURCE})
 else()

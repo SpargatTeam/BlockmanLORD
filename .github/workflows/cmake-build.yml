@@ -16,7 +16,7 @@ jobs:
         build_type: [Debug]
         c_compiler: [clang]
         cpp_compiler: [clang++]
-        framework: [gl, vk]
+        framework: [gl, vk, d3d]
         dev: [BlockmanLORD, GameServer, BlockmanEditor]
         exclude:
           - os: ubuntu-latest
@@ -41,6 +41,10 @@ jobs:
       if: matrix.os == 'windows-latest' && matrix.framework == 'd3d'
       run: |
         choco install directx -y
+
+    - name: Install OpenGL
+      uses: openrndr/setup-opengl@v1.1
+      if: matrix.framework == 'gl'
 
     # made on linux
     - name: Setup libs and depencies (Linux)

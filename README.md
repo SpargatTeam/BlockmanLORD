@@ -41,6 +41,11 @@
     </thead>
     <tbody>
         <tr>
+            <td>3d apis</td>
+            <td>OpenGL, OpenGL ES, Vulkan, DirectX, Metal</td>
+            <td>OpenGL, OpenGL ES, Vulkan, DirectX, Metal</td>
+        </tr>
+        <tr>
             <td>3d models</td>
             <td>.mesh .actor .effect .anim .skel .mca</td>
             <td>.obj .fbx .mesh.xml .mca .gltf .glb and more...</td>
