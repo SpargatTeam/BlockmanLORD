@@ -16,13 +16,17 @@ jobs:
         build_type: [Debug]
         c_compiler: [clang]
         cpp_compiler: [clang++]
-        framework: [gl, vk, d3d]
+        framework: [gl, vk, d3d, m]
         dev: [BlockmanLORD, GameServer, BlockmanEditor]
         exclude:
           - os: ubuntu-latest
             framework: d3d
           - os: macos-latest
             framework: d3d
+          - os: ubuntu-latest
+            framework: m
+          - os: windows-latest
+            framework: m
 
     steps:
     - uses: actions/checkout@v4
@@ -34,7 +38,14 @@ jobs:
       with:
           vulkan-query-version: 1.3.283.0
           vulkan-components: Vulkan-Headers, Vulkan-Loader
-          # vulkan-use-cache: true # what if we remove this? is cache v2 no longer used?
+          vulkan-use-cache: true
+
+    # metal
+    - name: Install Metal dependencies on macOS
+      if: runner.os == 'macos-latest' && matrix.framework == 'm'
+      run: |
+        xcode-select --install
+        sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
     # directx 10, 11 and 12
     - name: Install DirectX SDK (Windows)
@@ -44,8 +55,15 @@ jobs:
 
     # open gl
     - name: Install OpenGL
-      uses: NishkarshRaj/OpenGL_Actions@1.0
       if: matrix.framework == 'gl'
+      run: |
+        if [ $RUNNER_OS == 'ubuntu-latest' ]; then
+          sudo apt install -y libgl1-mesa-dev
+        elif [ $RUNNER_OS == 'macos-latest' ]; then
+          brew install libomp
+        elif [ $RUNNER_OS == 'windows-latest' ]; then
+          choco install mingw freeglut -y
+        fi
 
     # made on linux
     - name: Setup libs and depencies (Linux)
