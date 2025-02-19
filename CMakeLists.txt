@@ -35,7 +35,7 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     set(CMAKE_BINARY_DIR "${CMAKE_SOURCE_DIR}/build/release/${CMAKE_SYSTEM_NAME}")
 endif()
 if(NOT BLORD_MODEL OR 
-    NOT BLORD_MODEL MATCHES "^(d3d|vk|gl|gles)$")
+    NOT BLORD_MODEL MATCHES "^(gl|gles|vk|d3d|m)$")
     set(BLORD_MODEL "gl")
     message(STATUS "BLORD_MODEL not set or invalid. Defaulting to gl.")
 endif()
