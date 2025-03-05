@@ -46,7 +46,7 @@ int main() {
     string name;
     string server;
     // print info
-    cout << "BlockmanLORD Server" << endl << "Version " << BLORD_VERSION << endl << "Copyright (c) 2025 SpargatTeam" << endl << "All rights reserved." << endl << endl;
+    cout << "BlockmanLORD Server" << endl << "Version " << BLORD_VERSION << endl << "Copyright (c) 2025 SpargatGroup" << endl << "All rights reserved." << endl << endl;
     // get info
     loadConfig(name, server);
     if (name.empty() || server.empty()) {

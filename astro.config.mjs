@@ -8,7 +8,7 @@ import solidJs from "@astrojs/solid-js";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: "https://spargatteam.github.io/BlockmanLORD/",
+  site: "https://SpargatGroup.github.io/BlockmanLORD/",
   output: "static",
   integrations: [
     tailwind({

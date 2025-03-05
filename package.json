@@ -2,9 +2,9 @@
   "name": "blord",
   "version": "1.0.0",
   "description": "BlockmanLORD, Spargat's LORD Remake",
-  "author": "SpargatTeam",
+  "author": "SpargatGroup",
   "license": "GNU",
-  "repository": "https://github.com/SpargatTeam/BlockmanLORD",
+  "repository": "https://github.com/SpargatGroup/BlockmanLORD",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

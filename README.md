@@ -1,6 +1,6 @@
 # BlockmanLORD, a big project and a big remake
 
-## Copyright © 2025 [SpargatTeam](https://github.com/SpargatTeam). All rights reserved of the project [BlockmanLORD](https://github.com/SpargatTeam/BlockmanLORD)
+## Copyright © 2025 [SpargatGroup](https://github.com/SpargatGroup). All rights reserved of the project [BlockmanLORD](https://github.com/SpargatGroup/BlockmanLORD)
 
 ## Help us
 
@@ -13,15 +13,15 @@
 
 [![Donate](https://img.shields.io/badge/Support-Patreon-orange.svg)](https://patreon.com/Spargat)
 
-[![Forkers repo roster for @SpargatTeam/BlockmanLORD](https://reporoster.com/forks/SpargatTeam/BlockmanLORD)](https://github.com/SpargatTeam/BlockmanLORD/network/members)
+[![Forkers repo roster for @SpargatGroup/BlockmanLORD](https://reporoster.com/forks/SpargatGroup/BlockmanLORD)](https://github.com/SpargatGroup/BlockmanLORD/network/members)
 
-[![Stargazers repo roster for @SpargatTeam/BlockmanLORD](https://reporoster.com/stars/SpargatTeam/BlockmanLORD)](https://github.com/SpargatTeam/BlockmanLORD/stargazers)
+[![Stargazers repo roster for @SpargatGroup/BlockmanLORD](https://reporoster.com/stars/SpargatGroup/BlockmanLORD)](https://github.com/SpargatGroup/BlockmanLORD/stargazers)
 
 ## Build status
 
-[![CMake build status](https://github.com/SpargatTeam/BlockmanLORD/actions/workflows/cmake-build.yml/badge.svg)](https://github.com/SpargatTeam/BlockmanLORD/actions)
+[![CMake build status](https://github.com/SpargatGroup/BlockmanLORD/actions/workflows/cmake-build.yml/badge.svg)](https://github.com/SpargatGroup/BlockmanLORD/actions)
 
-[![Web build status](https://github.com/SpargatTeam/BlockmanLORD/actions/workflows/web-deploy.yml/badge.svg)](https://github.com/SpargatTeam/BlockmanLORD/actions)
+[![Web build status](https://github.com/SpargatGroup/BlockmanLORD/actions/workflows/web-deploy.yml/badge.svg)](https://github.com/SpargatGroup/BlockmanLORD/actions)
 
 ## Open source and how it helps: 
 
@@ -63,7 +63,7 @@
         <tr>
             <td>Owner</td>
             <td>SandBoxOl Network/Gverse</td>
-            <td>SpargatTeam</td>
+            <td>SpargatGroup</td>
         </tr>
     </tbody>
 </table>
